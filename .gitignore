@@ -2,11 +2,11 @@
 node_modules
 
 ## IDEA
-/.idea
+.idea
 
 ## vscode
-/.vs
-/.vscode
+.vs
+.vscode
 
 ## Py
 __pycache__
