@@ -1,0 +1,29 @@
+{
+    "checksum": "b6b3f774145f8f05bffa2d80449ac9f2",
+    "wallpaper": "/home/sincos/Pictures/Wallpaper/anime/main3.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0F122D",
+        "foreground": "#c3c3ca",
+        "cursor": "#c3c3ca"
+    },
+    "colors": {
+        "color0": "#0F122D",
+        "color1": "#2d324e",
+        "color2": "#393755",
+        "color3": "#6f4a57",
+        "color4": "#492373",
+        "color5": "#392f84",
+        "color6": "#3f3b71",
+        "color7": "#94959e",
+        "color8": "#616277",
+        "color9": "#3C4368",
+        "color10": "#4D4A72",
+        "color11": "#956375",
+        "color12": "#622F9A",
+        "color13": "#4D3FB1",
+        "color14": "#554F97",
+        "color15": "#c3c3ca"
+    }
+}

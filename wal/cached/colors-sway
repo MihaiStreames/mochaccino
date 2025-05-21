@@ -1,0 +1,21 @@
+set $wallpaper /home/sincos/Pictures/Wallpaper/anime/main3.jpg
+
+set $background #0F122D
+set $foreground #c3c3ca
+
+set $color0 #0F122D
+set $color1 #2d324e
+set $color2 #393755
+set $color3 #6f4a57
+set $color4 #492373
+set $color5 #392f84
+set $color6 #3f3b71
+set $color7 #94959e
+set $color8 #616277
+set $color9 #3C4368
+set $color10 #4D4A72
+set $color11 #956375
+set $color12 #622F9A
+set $color13 #4D3FB1
+set $color14 #554F97
+set $color15 #c3c3ca

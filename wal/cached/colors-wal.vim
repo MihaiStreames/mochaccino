@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/sincos/Pictures/Wallpaper/anime/main3.jpg"
+let background = "#0F122D"
+let foreground = "#c3c3ca"
+let cursor     = "#c3c3ca"
+
+" Colors
+let color0  = "#0F122D"
+let color1  = "#2d324e"
+let color2  = "#393755"
+let color3  = "#6f4a57"
+let color4  = "#492373"
+let color5  = "#392f84"
+let color6  = "#3f3b71"
+let color7  = "#94959e"
+let color8  = "#616277"
+let color9  = "#3C4368"
+let color10 = "#4D4A72"
+let color11 = "#956375"
+let color12 = "#622F9A"
+let color13 = "#4D3FB1"
+let color14 = "#554F97"
+let color15 = "#c3c3ca"
