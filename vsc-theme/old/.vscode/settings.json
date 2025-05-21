@@ -1,0 +1,15 @@
+{
+    "window.autoDetectColorScheme": true,
+    "workbench.colorCustomizations": {
+        "editor.background": "#0F122D"
+    },
+    "editor.tokenColorCustomizations": {
+       "functions":    "#3C4368", 
+        "keywords":     "#4D4A72",
+        "numbers":      "#956375", 
+        "strings":      "#622F9A", 
+        "types":        "#4D3FB1", 
+        "variables":    "#554F97", 
+        "comments":     "#616277"
+    }
+}

@@ -1,0 +1,1 @@
+/home/sincos/.config/mako

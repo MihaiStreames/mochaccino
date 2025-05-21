@@ -1,0 +1,21 @@
+{
+  "name": "base16-mihuutheme",
+  "displayName": "Base16 MihuuTheme",
+  "description": "My own custom color theme for VSC (Base16)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Mihuu16",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Mihuu16-color-theme.json"
+      }
+    ]
+  }
+}
