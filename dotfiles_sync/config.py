@@ -7,16 +7,15 @@ TARGET_REPO: str = str(SCRIPT_DIR.parent)
 
 HOME = str(Path.home())
 SOURCE_DIRS: List[str] = [
-    f"{HOME}/.config/alacritty",
+    f"{HOME}/.config/kitty",
     f"{HOME}/.config/fish",
+    f"{HOME}/.config/fastfetch",
     f"{HOME}/.config/hypr",
-    f"{HOME}/.config/mako",
     f"{HOME}/.config/qt5ct",
     f"{HOME}/.config/qt6ct",
+    f"{HOME}/.config/dunst",
     f"{HOME}/.config/rofi",
-    f"{HOME}/.config/wal",
     f"{HOME}/.config/waybar",
-    f"{HOME}/.config/zathura",
     f"{HOME}/.themes/oomox-MihuuTheme",
     f"{HOME}/.themes/ide-MihuuThemes",
     f"{HOME}/.bash_profile",
