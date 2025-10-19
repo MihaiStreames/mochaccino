@@ -20,7 +20,6 @@ SOURCE_DIRS: List[str] = [
     f"{HOME}/.config/dunst",
     f"{HOME}/.config/rofi",
     f"{HOME}/.config/waybar",
-    f"{HOME}/.config/spicetify",
     f"{HOME}/.config/Code/User/settings.json",
     f"{HOME}/.bash_profile",
     f"{HOME}/.bashrc",
