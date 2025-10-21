@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import Optional, List, Union
+from typing import List, Optional, Union
 
 import pathspec
 
@@ -25,9 +25,14 @@ class GitIgnoreHandler:
             if not os.path.isfile(filepath):
                 return
 
-            with open(filepath, 'r') as f:
-                patterns.extend([line.strip() for line in f
-                                 if line.strip() and not line.startswith('#')])
+            with open(filepath, "r") as f:
+                patterns.extend(
+                    [
+                        line.strip()
+                        for line in f
+                        if line.strip() and not line.startswith("#")
+                    ]
+                )
 
         # Add repository .gitignore
         read_patterns(os.path.join(TARGET_REPO, ".gitignore"))
@@ -41,9 +46,11 @@ class GitIgnoreHandler:
 
         # Create pathspec object to match patterns if we have any
         if patterns:
-            self.spec = pathspec.PathSpec.from_lines('gitwildmatch', patterns)
+            self.spec = pathspec.PathSpec.from_lines("gitwildmatch", patterns)
 
-    def should_ignore(self, path: Union[str, Path], base_path: Union[str, Path]) -> bool:
+    def should_ignore(
+        self, path: Union[str, Path], base_path: Union[str, Path]
+    ) -> bool:
         """
         Check if a file should be ignored based on gitignore patterns.
         """
