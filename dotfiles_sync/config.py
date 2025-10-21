@@ -1,30 +1,31 @@
 import datetime
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 SCRIPT_DIR = Path(__file__).parent.absolute()
 TARGET_REPO: str = str(SCRIPT_DIR.parent)
 
 HOME = str(Path.home())
-SOURCE_DIRS: List[str] = [
-    f"{HOME}/.config/kitty",
-    f"{HOME}/.config/fish",
-    f"{HOME}/.config/fastfetch",
-    f"{HOME}/.config/hypr",
-    f"{HOME}/.config/gtk-4.0",
-    f"{HOME}/.config/gtk-3.0",
-    f"{HOME}/.config/qt5ct",
-    f"{HOME}/.config/qt6ct",
-    f"{HOME}/.config/Kvantum",
-    f"{HOME}/.config/wlogout",
-    f"{HOME}/.config/dunst",
-    f"{HOME}/.config/rofi",
-    f"{HOME}/.config/waybar",
-    f"{HOME}/.config/Code/User/settings.json",
-    f"{HOME}/.bash_profile",
-    f"{HOME}/.bashrc",
-    f"{HOME}/.nanorc",
-    str(SCRIPT_DIR)
+
+SOURCE_MAPPINGS: List[Tuple[str, str]] = [
+    (f"{HOME}/.config/kitty", ".config"),
+    (f"{HOME}/.config/fish", ".config"),
+    (f"{HOME}/.config/fastfetch", ".config"),
+    (f"{HOME}/.config/hypr", ".config"),
+    (f"{HOME}/.config/gtk-4.0", ".config"),
+    (f"{HOME}/.config/gtk-3.0", ".config"),
+    (f"{HOME}/.config/qt5ct", ".config"),
+    (f"{HOME}/.config/qt6ct", ".config"),
+    (f"{HOME}/.config/Kvantum", ".config"),
+    (f"{HOME}/.config/wlogout", ".config"),
+    (f"{HOME}/.config/dunst", ".config"),
+    (f"{HOME}/.config/rofi", ".config"),
+    (f"{HOME}/.config/waybar", ".config"),
+    (f"{HOME}/.config/Code/User/settings.json", ".config"),
+    (f"{HOME}/.bash_profile", ".home"),
+    (f"{HOME}/.bashrc", ".home"),
+    (f"{HOME}/.nanorc", ".home")
+    # (str(SCRIPT_DIR), ".scripts")
 ]
 
 

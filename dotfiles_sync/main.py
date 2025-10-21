@@ -17,7 +17,7 @@ import os
 import sys
 from typing import Dict
 
-from config import SOURCE_DIRS, TARGET_REPO, Colors, LOG_FILE
+from config import SOURCE_MAPPINGS, TARGET_REPO, Colors, LOG_FILE
 from file_sync import FileSyncer
 from gitignore import GitIgnoreHandler
 
@@ -58,19 +58,19 @@ def main() -> int:
     syncer = FileSyncer(gitignore_handler, settings)
 
     try:
-        # Process all source directories and files
-        for source in SOURCE_DIRS:
-            if os.path.isdir(source):
+        # Process all source mappings
+        for source_path, target_category in SOURCE_MAPPINGS:
+            if os.path.isdir(source_path):
                 if settings['verbose']:
-                    print(f"{Colors.colorize('Processing directory:', 'YELLOW')} {source}")
-                syncer.process_directory(source)
-            elif os.path.isfile(source):
+                    print(f"{Colors.colorize('Processing directory:', 'YELLOW')} {source_path} -> {target_category}/")
+                syncer.process_source(source_path, target_category)
+            elif os.path.isfile(source_path):
                 if settings['verbose']:
-                    print(f"{Colors.colorize('Processing file:', 'YELLOW')} {source}")
-                syncer.sync_file(source, os.path.dirname(source))
+                    print(f"{Colors.colorize('Processing file:', 'YELLOW')} {source_path} -> {target_category}/")
+                syncer.process_source(source_path, target_category)
             else:
                 if settings['verbose']:
-                    print(f"{Colors.colorize('Source doesn\'t exist:', 'RED')} {source}")
+                    print(f"{Colors.colorize('Source doesn\'t exist:', 'RED')} {source_path}")
 
         # Detect deleted files (if auto-delete enabled or if interactive and not quiet)
         if settings['auto_delete']:
