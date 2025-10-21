@@ -24,17 +24,17 @@ SOURCE_DIRS: List[str] = [
     f"{HOME}/.bash_profile",
     f"{HOME}/.bashrc",
     f"{HOME}/.nanorc",
-    str(SCRIPT_DIR)
+    str(SCRIPT_DIR),
 ]
 
 
 class Colors:
-    GREEN = '\033[0;32m'
-    YELLOW = '\033[0;33m'
-    RED = '\033[0;31m'
-    BLUE = '\033[0;34m'
-    PURPLE = '\033[0;35m'
-    NC = '\033[0m'
+    GREEN  = "\033[0;32m"
+    YELLOW = "\033[0;33m"
+    RED    = "\033[0;31m"
+    BLUE   = "\033[0;34m"
+    PURPLE = "\033[0;35m"
+    NC     = "\033[0m"
 
     @classmethod
     def colorize(cls, text: str, color: str) -> str:
@@ -49,5 +49,5 @@ LOG_FILE = f"/tmp/dotfiles_sync_{timestamp}.log"
 DEFAULT_SETTINGS: Dict[str, bool] = {
     "dry_run": False,
     "auto_delete": False,
-    "verbose": True
+    "verbose": True,
 }

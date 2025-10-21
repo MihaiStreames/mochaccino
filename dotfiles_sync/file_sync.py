@@ -3,9 +3,9 @@ import logging
 import os
 import shutil
 from pathlib import Path
-from typing import Set, Union, Optional, Dict
+from typing import Dict, Optional, Set, Union
 
-from config import Colors, LOG_FILE, TARGET_REPO, DEFAULT_SETTINGS, HOME
+from config import DEFAULT_SETTINGS, HOME, LOG_FILE, TARGET_REPO, Colors
 
 
 class FileSyncer:
@@ -23,21 +23,21 @@ class FileSyncer:
 
         # Set up logging
         logging.basicConfig(
-            filename=LOG_FILE,
-            level=logging.INFO,
-            format='%(asctime)s - %(message)s'
+            filename=LOG_FILE, level=logging.INFO, format="%(asctime)s - %(message)s"
         )
-        self.logger = logging.getLogger('dotfiles_sync')
+        self.logger = logging.getLogger("dotfiles_sync")
 
-    def _log_and_print(self, action: str, message: str, color: str = 'BLUE') -> None:
+    def _log_and_print(self, action: str, message: str, color: str = "BLUE") -> None:
         """Log an action and print it to console with color."""
-        if self.settings['verbose']:
+        if self.settings["verbose"]:
             colored_msg = f"{Colors.colorize(f'[{action}]', color)} {message}"
             print(colored_msg)
 
         self.logger.info(f"[{action}] {message}")
 
-    def sync_file(self, source_file: Union[str, Path], base_dir: Union[str, Path]) -> None:
+    def sync_file(
+        self, source_file: Union[str, Path], base_dir: Union[str, Path]
+    ) -> None:
         """Sync a single file from source to target repo."""
         # Convert paths to strings
         source_file_str = str(source_file)
@@ -58,7 +58,7 @@ class FileSyncer:
 
         # Check if file should be ignored
         if self.gitignore_handler.should_ignore(source_file_str, base_dir_str):
-            self._log_and_print('IGNORED', relative_path, 'BLUE')
+            self._log_and_print("IGNORED", relative_path, "BLUE")
             return
 
         # Add to processed files
@@ -68,27 +68,29 @@ class FileSyncer:
         os.makedirs(os.path.dirname(target_file), exist_ok=True)
 
         # Check if this is a dry run
-        if self.settings['dry_run']:
+        if self.settings["dry_run"]:
             if not os.path.exists(target_file):
-                self._log_and_print('WOULD ADD', relative_path, 'GREEN')
+                self._log_and_print("WOULD ADD", relative_path, "GREEN")
             elif not filecmp.cmp(source_file_str, target_file, shallow=False):
-                self._log_and_print('WOULD UPDATE', relative_path, 'YELLOW')
+                self._log_and_print("WOULD UPDATE", relative_path, "YELLOW")
             return
 
         if not os.path.exists(target_file):
             # File doesn't exist in target, copy it
             shutil.copy2(source_file_str, target_file)
-            self._log_and_print('ADDED', relative_path, 'GREEN')
+            self._log_and_print("ADDED", relative_path, "GREEN")
         elif not filecmp.cmp(source_file_str, target_file, shallow=False):
             # File exists but is different, update it
             shutil.copy2(source_file_str, target_file)
-            self._log_and_print('UPDATED', relative_path, 'YELLOW')
+            self._log_and_print("UPDATED", relative_path, "YELLOW")
 
     def process_directory(self, source_dir: Union[str, Path]) -> None:
         """Process a directory recursively and sync all files."""
         source_dir_str = str(source_dir)
         # Use HOME as base_dir to preserve full structure
-        base_dir = HOME if source_dir_str.startswith(HOME) else os.path.dirname(source_dir_str)
+        base_dir = (
+            HOME if source_dir_str.startswith(HOME) else os.path.dirname(source_dir_str)
+        )
 
         for root, _, files in os.walk(source_dir_str):
             # Process files in current directory
@@ -101,7 +103,7 @@ class FileSyncer:
         # To never delete !
         protected_files = [".gitignore", ".gitattributes", "README.md", "LICENSE"]
 
-        if self.settings['verbose']:
+        if self.settings["verbose"]:
             print(f"\n{Colors.colorize('Checking for deleted files...', 'BLUE')}")
 
         self.logger.info("Checking for deleted files...")
@@ -122,7 +124,7 @@ class FileSyncer:
 
                 # Check if this file was processed (exists in source)
                 if relative_path not in self.processed_files:
-                    self._log_and_print('DELETED', relative_path, 'RED')
+                    self._log_and_print("DELETED", relative_path, "RED")
 
                     # Determine whether to delete file
                     delete_file = False
@@ -130,17 +132,19 @@ class FileSyncer:
                         delete_file = True
                     elif delete_mode == "ask":
                         choice = input("Delete this file from repo? (y/n): ")
-                        delete_file = choice.lower() in ('y', 'yes')
+                        delete_file = choice.lower() in ("y", "yes")
 
-                    if self.settings['dry_run']:
+                    if self.settings["dry_run"]:
                         if delete_file:
-                            self._log_and_print('WOULD REMOVE', relative_path, 'RED')
+                            self._log_and_print("WOULD REMOVE", relative_path, "RED")
                         continue
 
                     if delete_file:
                         # Delete the file
                         os.remove(repo_file)
-                        self._log_and_print('REMOVED', f"{relative_path} from repo", 'RED')
+                        self._log_and_print(
+                            "REMOVED", f"{relative_path} from repo", "RED"
+                        )
 
                         # Check if directory is now empty and remove if it is
                         self._cleanup_empty_dirs(os.path.dirname(repo_file))
@@ -153,7 +157,7 @@ class FileSyncer:
         if not os.listdir(directory):
             os.rmdir(directory)
             rel_dir = os.path.relpath(directory, TARGET_REPO)
-            self._log_and_print('REMOVED', f"Empty directory: {rel_dir}", 'RED')
+            self._log_and_print("REMOVED", f"Empty directory: {rel_dir}", "RED")
 
             # Check if parent is now empty
             self._cleanup_empty_dirs(os.path.dirname(directory))
