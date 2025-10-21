@@ -1,11 +1,10 @@
 import os
+import pathspec
 from functools import lru_cache
 from pathlib import Path
 from typing import Dict, Optional, List, Union
 
-import pathspec
-
-from config import SOURCE_MAPPINGS, TARGET_REPO
+from config import SOURCE_DIRS, TARGET_REPO
 
 
 class GitIgnoreHandler:
@@ -36,7 +35,7 @@ class GitIgnoreHandler:
         read_patterns(os.path.join(TARGET_REPO, ".gitignore"))
 
         # Add source .gitignore files
-        for source, _ in SOURCE_MAPPINGS:
+        for source in SOURCE_DIRS:
             if os.path.isdir(source):
                 read_patterns(os.path.join(source, ".gitignore"))
             elif os.path.isfile(source):
