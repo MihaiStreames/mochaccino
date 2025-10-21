@@ -1,0 +1,88 @@
+* {
+    font-family: JetBrains Mono, Symbols Nerd Font;
+    font-size: 24px;
+    transition-property: background-color;
+    transition-duration: 0.7s;
+}
+
+window {
+    background-color: #11111b;
+    /* border-radius: 10px; */
+}
+
+button {
+    background-color: #11111b;
+    border-style: solid;
+    /* border-width: 2px; */
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
+    margin: 15px;
+}
+
+button:active,
+button:hover {
+    background-color: #cdd6f4;
+}
+
+button:focus {
+    background-color: #cdd6f4;
+}
+
+#lock {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/lock.png"));
+}
+
+#lock:hover {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/lock-hover.png"));
+    color: #11111b;
+}
+
+#logout {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/logout.png"));
+}
+
+#logout:hover {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/logout-hover.png"));
+    color: #11111b;
+}
+
+#suspend {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/sleep.png"));
+}
+
+#suspend:hover {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/sleep-hover.png"));
+    color: #11111b;
+}
+
+#shutdown {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/power.png"));
+}
+
+#shutdown:hover {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/power-hover.png")); 
+    color: #11111b;
+}
+
+#reboot {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/restart.png"));
+}
+
+#reboot:hover {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/restart-hover.png"));
+    color: #11111b;
+}
+
+#exit {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/restart.png"));
+    background-color: #11111b;
+
+}
+
+#exit:hover {
+    background-image: image(url("/home/sincos/.config/wlogout/assets/restart-hover.png"));
+    color: #11111b;
+    background-color: #cdd6f4;
+}
