@@ -1,16 +1,17 @@
 ## JS / TS
-node_modules
+node_modules/
 
 ## IDEA
-.idea
+.idea/
 
 ## vscode
-.vs
-.vscode
-.vscode-test
+.vs/
+.vscode/
+.vscode-test/
 
 ## Py
-__pycache__
+__pycache__/
+.venv/
 
 ## Git
-.git
+.git/

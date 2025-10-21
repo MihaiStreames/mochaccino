@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 from typing import Set, Union, Optional, Dict
 
-from config import Colors, LOG_FILE, TARGET_REPO, DEFAULT_SETTINGS
+from config import Colors, LOG_FILE, TARGET_REPO, DEFAULT_SETTINGS, HOME
 
 
 class FileSyncer:
@@ -43,11 +43,16 @@ class FileSyncer:
         source_file_str = str(source_file)
         base_dir_str = str(base_dir)
 
-        # Calculate relative path
-        if os.path.isdir(base_dir_str):
-            relative_path = os.path.relpath(source_file_str, base_dir_str)
+        # Calculate relative path from HOME to preserve full structure
+        if source_file_str.startswith(HOME):
+            # For files under HOME, preserve the path structure relative to HOME
+            relative_path = os.path.relpath(source_file_str, HOME)
         else:
-            relative_path = os.path.basename(source_file_str)
+            # For other files, use the base_dir approach
+            if os.path.isdir(base_dir_str):
+                relative_path = os.path.relpath(source_file_str, base_dir_str)
+            else:
+                relative_path = os.path.basename(source_file_str)
 
         target_file = os.path.join(TARGET_REPO, relative_path)
 
@@ -82,7 +87,8 @@ class FileSyncer:
     def process_directory(self, source_dir: Union[str, Path]) -> None:
         """Process a directory recursively and sync all files."""
         source_dir_str = str(source_dir)
-        base_dir = os.path.dirname(source_dir_str)
+        # Use HOME as base_dir to preserve full structure
+        base_dir = HOME if source_dir_str.startswith(HOME) else os.path.dirname(source_dir_str)
 
         for root, _, files in os.walk(source_dir_str):
             # Process files in current directory

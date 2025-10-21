@@ -1,8 +1,8 @@
 import os
-import pathspec
-from functools import lru_cache
 from pathlib import Path
-from typing import Dict, Optional, List, Union
+from typing import Optional, List, Union
+
+import pathspec
 
 from config import SOURCE_DIRS, TARGET_REPO
 
@@ -14,8 +14,6 @@ class GitIgnoreHandler:
 
     def __init__(self):
         self.spec: Optional[pathspec.PathSpec] = None
-        # Cache of ignore decisions for paths to improve performance
-        self.cache: Dict[str, bool] = {}
         self._load_gitignore_patterns()
 
     def _load_gitignore_patterns(self) -> None:
@@ -45,12 +43,12 @@ class GitIgnoreHandler:
         if patterns:
             self.spec = pathspec.PathSpec.from_lines('gitwildmatch', patterns)
 
-    @lru_cache(maxsize=1024)
     def should_ignore(self, path: Union[str, Path], base_path: Union[str, Path]) -> bool:
         """
         Check if a file should be ignored based on gitignore patterns.
         """
-        if not self.spec: return False
+        if not self.spec:
+            return False
 
         # Convert paths to strings
         path_str = str(path)
