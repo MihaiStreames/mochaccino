@@ -1,42 +1,43 @@
+@import "mocha.css";
+
 * {
     border: none;
     border-radius: 0;
     font-family: CaskaydiaCove Nerd Font Mono, monospace;
-    font-weight: bold;
     font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
     background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    color: @text;
 }
 
 #workspaces button {
     padding: 5px;
-    color: #555869;
+    color: @subtext0;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
+    color: @rosewater;
 }
 
 #workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
+    color: @subtext0;
+    background: @maroon;
     border-radius: 10px;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
+    color: @crust;
+    background: @subtext0;
     border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: #cdd6f4;
-    color: #11111b; 
+    background: @rosewater;
+    color: @crust; 
     border-radius: 10px;
 }
 
@@ -50,7 +51,7 @@ window#waybar {
 #workspaces,
 #tray,
 #backlight {
-    background: #1e1e2e;
+    background: @base;
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 5px;
@@ -67,7 +68,7 @@ window#waybar {
 }
 
 #workspaces {
-    background: #1e1e2e;
+    background: @base;
     border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
@@ -90,26 +91,26 @@ window#waybar {
 }
 
 #clock {
-    color: #a6adc8;
+    color: @subtext0;
     border-radius: 10px 10px 10px 10px;
     margin-left: 5px;
     border-right: 0px;
 }
 
 #network {
-    color:  #a6adc8;
+    color:  @subtext0;
     border-radius: 10px 0px 0px 10px;
 
 }
 
 #pulseaudio {
-    color: #a6adc8;
+    color: @subtext0;
     border-left: 0px;
     border-right: 0px;
 }
 
 #pulseaudio.microphone {
-    color: #a6adc8;
+    color: @subtext0;
     border-radius: 0px 10px 10px 0px;
     border-left: 0px;
     border-right: 0px;
@@ -117,7 +118,7 @@ window#waybar {
 }
 
 #battery {
-    color:#a6adc8;
+    color:@subtext0;
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
 }
