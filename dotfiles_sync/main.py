@@ -80,9 +80,7 @@ def main() -> int:
                 syncer.sync_file(source, os.path.dirname(source))
             else:
                 if settings["verbose"]:
-                    print(
-                        f"{Colors.colorize('Source doesn\'t exist:', 'RED')} {source}"
-                    )
+                    print(f"{Colors.colorize("Source doesn't exist:", 'RED')} {source}")
 
         # Detect deleted files (if auto-delete enabled or if interactive and not quiet)
         if settings["auto_delete"]:

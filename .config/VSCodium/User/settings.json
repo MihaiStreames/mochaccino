@@ -1,0 +1,37 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "catppuccin.accentColor": "rosewater",
+
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.location": "top",
+    "window.customTitleBarVisibility": "auto",
+
+    "chat.disableAIFeatures": false,
+
+    "extensions.autoUpdate": false,
+
+    "terminal.external.linuxExec": "kitty",
+    "terminal.explorerKind": "both",
+    "terminal.sourceControlRepositoriesKind": "both",
+
+    "window.menuBarVisibility": "toggle",
+
+    "editor.fontFamily": "'JetbrainsMono Nerd Font','Maple Mono', monospace",
+    "editor.fontSize": 12,
+
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.minimap.side": "left",
+
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "security.workspace.trust.startupPrompt": "never",
+    "security.workspace.trust.enabled": false,
+
+    "telemetry.telemetryLevel": "off",
+
+    "git.openRepositoryInParentFolders": "always",
+    "svelte.enable-ts-plugin": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
+}

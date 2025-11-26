@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>kitty</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1746707039393095-1</unique-id>
+	<command>kitty</command>
+	<description>Kitty</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
