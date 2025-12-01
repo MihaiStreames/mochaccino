@@ -33,5 +33,6 @@
     "git.openRepositoryInParentFolders": "always",
     "svelte.enable-ts-plugin": true,
     "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "workbench.secondarySideBar.defaultVisibility": "visible"
 }

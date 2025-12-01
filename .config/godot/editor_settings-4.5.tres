@@ -72,6 +72,7 @@ _export_template_download_directory = ""
 _default_feature_profile = ""
 _script_setup_templates_dictionary = {
 "Camera3D": "0NodeDefault",
+"Control": "0NodeDefault",
 "MeshInstance3D": "0NodeDefault",
 "Node": "0NodeDefault",
 "Node3D": "0NodeDefault"
