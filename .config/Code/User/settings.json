@@ -1,11 +1,16 @@
 {
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.activityBar.location": "top",
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    
     "catppuccin.accentColor": "rosewater",
 
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.location": "top",
     "window.customTitleBarVisibility": "auto",
+    "window.menuBarVisibility": "toggle",
 
     "chat.disableAIFeatures": false,
 
@@ -14,8 +19,6 @@
     "terminal.external.linuxExec": "kitty",
     "terminal.explorerKind": "both",
     "terminal.sourceControlRepositoriesKind": "both",
-
-    "window.menuBarVisibility": "toggle",
 
     "editor.fontFamily": "'JetbrainsMono Nerd Font','Maple Mono', monospace",
     "editor.fontSize": 12,
@@ -32,7 +35,16 @@
 
     "git.openRepositoryInParentFolders": "always",
     "svelte.enable-ts-plugin": true,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "workbench.secondarySideBar.defaultVisibility": "visible"
+
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "python.languageServer": "Pylance",
+
+    "[dockercompose]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+    },
+    
+    "claudeCode.preferredLocation": "panel",
+    "python.analysis.typeCheckingMode": "strict",
 }

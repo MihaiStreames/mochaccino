@@ -26,7 +26,7 @@ SOURCE_DIRS: List[str] = [
     f"{HOME}/.config/Thunar/uca.xml",
     f"{HOME}/.config/sublime-text/Packages",
     f"{HOME}/.config/spicetify/Themes",
-    f"{HOME}/.config/VSCodium/User/settings.json",
+    f"{HOME}/.config/Code/User/settings.json",
     f"{HOME}/.config/obs-studio/themes",
     f"{HOME}/.config/obs-studio/user.ini",
     f"{HOME}/.bash_profile",
@@ -37,12 +37,12 @@ SOURCE_DIRS: List[str] = [
 
 
 class Colors:
-    GREEN  = "\033[0;32m"
+    GREEN = "\033[0;32m"
     YELLOW = "\033[0;33m"
-    RED    = "\033[0;31m"
-    BLUE   = "\033[0;34m"
+    RED = "\033[0;31m"
+    BLUE = "\033[0;34m"
     PURPLE = "\033[0;35m"
-    NC     = "\033[0m"
+    NC = "\033[0m"
 
     @classmethod
     def colorize(cls, text: str, color: str) -> str:
