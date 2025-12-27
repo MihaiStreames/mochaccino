@@ -1,15 +1,14 @@
 ## JS / TS
 node_modules/
 
-## IDEA
+## IDEs
 .idea/
-
-## vscode
 .vs/
 .vscode/
 .vscode-test/
 
 ## Py
+.ruff_cache/
 __pycache__/
 .venv/
 

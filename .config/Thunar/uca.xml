@@ -4,10 +4,49 @@
 	<icon>kitty</icon>
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
-	<unique-id>1746707039393095-1</unique-id>
-	<command>kitty</command>
-	<description>Kitty</description>
+	<unique-id>1745772433441936-1</unique-id>
+	<command>/usr/bin/kitty</command>
+	<description>Terminal</description>
 	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>sublime-text</icon>
+	<name>Open in Sublime Text</name>
+	<submenu></submenu>
+	<unique-id>1746106169185135-1</unique-id>
+	<command>subl %f</command>
+	<description>Open current folder in Sublime Text</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>filelight</icon>
+	<name>Disk Usage</name>
+	<submenu></submenu>
+	<unique-id>1746105175763802-2</unique-id>
+	<command>filelight %f</command>
+	<description>Check how much space the current directory uses</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>file-search-02</icon>
+	<name>Search files in folder</name>
+	<submenu></submenu>
+	<unique-id>1746104943521417-1</unique-id>
+	<command>catfish %f</command>
+	<description>Catfish search</description>
+	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
 </action>

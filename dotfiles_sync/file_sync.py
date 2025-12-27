@@ -1,163 +1,166 @@
 import filecmp
 import logging
 import os
-import shutil
 from pathlib import Path
-from typing import Dict, Optional, Set, Union
+import shutil
+from typing import TYPE_CHECKING
 
-from config import DEFAULT_SETTINGS, HOME, LOG_FILE, TARGET_REPO, Colors
+from config import DEFAULT_SETTINGS
+from config import HOME
+from config import HOST_SPECIFIC_PATHS
+from config import HOST_TYPE
+from config import LOG_FILE
+from config import TARGET_REPO
+from config import Colors
+
+
+if TYPE_CHECKING:
+    from gitignore import GitIgnoreHandler
 
 
 class FileSyncer:
-    """Synchronizes files between source directories and target repository."""
+    """Synchronizes files between source directories and target repository"""
 
-    def __init__(self, gitignore_handler, settings: Optional[Dict[str, bool]] = None):
-        """Initialize the FileSyncer with gitignore handler and optional settings."""
+    def __init__(
+        self, gitignore_handler: GitIgnoreHandler, settings: dict[str, bool] | None = None
+    ):
         self.gitignore_handler = gitignore_handler
-        self.processed_files: Set[str] = set()
+        self.processed_files: set[str] = set()
         self.settings = DEFAULT_SETTINGS.copy()
 
-        # Update settings if provided
         if settings:
             self.settings.update(settings)
 
-        # Set up logging
+        # Setup logging
         logging.basicConfig(
             filename=LOG_FILE, level=logging.INFO, format="%(asctime)s - %(message)s"
         )
         self.logger = logging.getLogger("dotfiles_sync")
 
-    def _log_and_print(self, action: str, message: str, color: str = "BLUE") -> None:
-        """Log an action and print it to console with color."""
+    def _log(self, action: str, message: str, color: str = "BLUE") -> None:
+        """Log an action and optionally print to console"""
         if self.settings["verbose"]:
-            colored_msg = f"{Colors.colorize(f'[{action}]', color)} {message}"
-            print(colored_msg)
-
+            print(f"{Colors.colorize(f'[{action}]', color)} {message}")
         self.logger.info(f"[{action}] {message}")
 
-    def sync_file(
-        self, source_file: Union[str, Path], base_dir: Union[str, Path]
-    ) -> None:
-        """Sync a single file from source to target repo."""
-        # Convert paths to strings
-        source_file_str = str(source_file)
-        base_dir_str = str(base_dir)
+    def _copy_if_needed(self, source: str, target: str, relative_path: str) -> None:
+        """Copy file from source to target if needed, handling dry-run mode"""
+        os.makedirs(os.path.dirname(target), exist_ok=True)
 
-        # Calculate relative path from HOME to preserve full structure
-        if source_file_str.startswith(HOME):
-            # For files under HOME, preserve the path structure relative to HOME
-            relative_path = os.path.relpath(source_file_str, HOME)
+        if self.settings["dry_run"]:
+            if not os.path.exists(target):
+                self._log("WOULD ADD", relative_path, "GREEN")
+            elif not filecmp.cmp(source, target, shallow=False):
+                self._log("WOULD UPDATE", relative_path, "YELLOW")
+            return
+
+        if not os.path.exists(target):
+            shutil.copy2(source, target)
+            self._log("ADDED", relative_path, "GREEN")
+        elif not filecmp.cmp(source, target, shallow=False):
+            shutil.copy2(source, target)
+            self._log("UPDATED", relative_path, "YELLOW")
+
+    def sync_file(self, source_file: str | Path, base_dir: str | Path) -> None:
+        """Sync a single file from source to target repo"""
+        source_str = str(source_file)
+        base_str = str(base_dir)
+
+        # Skip host-specific files
+        if source_str in HOST_SPECIFIC_PATHS:
+            if self.settings["verbose"]:
+                self._log("SKIP", f"{source_str} (host-specific)", "BLUE")
+            return
+
+        # Calculate relative path
+        if source_str.startswith(HOME):
+            relative_path = os.path.relpath(source_str, HOME)
         else:
-            # For other files, use the base_dir approach
-            if os.path.isdir(base_dir_str):
-                relative_path = os.path.relpath(source_file_str, base_dir_str)
-            else:
-                relative_path = os.path.basename(source_file_str)
-
-        target_file = os.path.join(TARGET_REPO, relative_path)
+            relative_path = (
+                os.path.relpath(source_str, base_str)
+                if os.path.isdir(base_str)
+                else os.path.basename(source_str)
+            )
 
         # Check if file should be ignored
-        if self.gitignore_handler.should_ignore(source_file_str, base_dir_str):
-            self._log_and_print("IGNORED", relative_path, "BLUE")
+        if self.gitignore_handler.should_ignore(source_str, base_str):
+            self._log("IGNORED", relative_path, "BLUE")
             return
 
-        # Add to processed files
         self.processed_files.add(relative_path)
+        target_file = os.path.join(TARGET_REPO, relative_path)
+        self._copy_if_needed(source_str, target_file, relative_path)
 
-        # Create target directory if it doesn't exist
-        os.makedirs(os.path.dirname(target_file), exist_ok=True)
+    def process_directory(self, source_dir: str | Path) -> None:
+        """Process a directory recursively and sync all files"""
+        source_str = str(source_dir)
+        base_dir = HOME if source_str.startswith(HOME) else os.path.dirname(source_str)
 
-        # Check if this is a dry run
-        if self.settings["dry_run"]:
-            if not os.path.exists(target_file):
-                self._log_and_print("WOULD ADD", relative_path, "GREEN")
-            elif not filecmp.cmp(source_file_str, target_file, shallow=False):
-                self._log_and_print("WOULD UPDATE", relative_path, "YELLOW")
+        for root, _, files in os.walk(source_str):
+            for file in files:
+                self.sync_file(os.path.join(root, file), base_dir)
+
+    def sync_host_specific_file(self, source_file: str, relative_dest: str) -> None:
+        """Sync a host-specific file to hosts/{pc|laptop}/ directory"""
+        if not os.path.exists(source_file):
+            if self.settings["verbose"]:
+                self._log("SKIP", f"{source_file} (doesn't exist)", "YELLOW")
             return
 
-        if not os.path.exists(target_file):
-            # File doesn't exist in target, copy it
-            shutil.copy2(source_file_str, target_file)
-            self._log_and_print("ADDED", relative_path, "GREEN")
-        elif not filecmp.cmp(source_file_str, target_file, shallow=False):
-            # File exists but is different, update it
-            shutil.copy2(source_file_str, target_file)
-            self._log_and_print("UPDATED", relative_path, "YELLOW")
+        host_relative_path = os.path.join("hosts", HOST_TYPE, relative_dest)
+        self.processed_files.add(host_relative_path)
 
-    def process_directory(self, source_dir: Union[str, Path]) -> None:
-        """Process a directory recursively and sync all files."""
-        source_dir_str = str(source_dir)
-        # Use HOME as base_dir to preserve full structure
-        base_dir = (
-            HOME if source_dir_str.startswith(HOME) else os.path.dirname(source_dir_str)
-        )
-
-        for root, _, files in os.walk(source_dir_str):
-            # Process files in current directory
-            for file in files:
-                full_path = os.path.join(root, file)
-                self.sync_file(full_path, base_dir)
-
-    def detect_deleted_files(self, delete_mode: str = "ask") -> None:
-        """Detect files that exist in repo but not in source."""
-        # To never delete !
-        protected_files = [".gitignore", ".gitattributes", "README.md", "LICENSE"]
-
-        if self.settings["verbose"]:
-            print(f"\n{Colors.colorize('Checking for deleted files...', 'BLUE')}")
-
-        self.logger.info("Checking for deleted files...")
-
-        # Walk through all files in the repo
-        for root, _, files in os.walk(TARGET_REPO):
-            for file in files:
-                repo_file = os.path.join(root, file)
-                relative_path = os.path.relpath(repo_file, TARGET_REPO)
-
-                # Skip protected files
-                if os.path.basename(relative_path) in protected_files:
-                    continue
-
-                # Skip if file should be ignored
-                if self.gitignore_handler.should_ignore(repo_file, TARGET_REPO):
-                    continue
-
-                # Check if this file was processed (exists in source)
-                if relative_path not in self.processed_files:
-                    self._log_and_print("DELETED", relative_path, "RED")
-
-                    # Determine whether to delete file
-                    delete_file = False
-                    if delete_mode == "yes":
-                        delete_file = True
-                    elif delete_mode == "ask":
-                        choice = input("Delete this file from repo? (y/n): ")
-                        delete_file = choice.lower() in ("y", "yes")
-
-                    if self.settings["dry_run"]:
-                        if delete_file:
-                            self._log_and_print("WOULD REMOVE", relative_path, "RED")
-                        continue
-
-                    if delete_file:
-                        # Delete the file
-                        os.remove(repo_file)
-                        self._log_and_print(
-                            "REMOVED", f"{relative_path} from repo", "RED"
-                        )
-
-                        # Check if directory is now empty and remove if it is
-                        self._cleanup_empty_dirs(os.path.dirname(repo_file))
+        target_file = os.path.join(TARGET_REPO, host_relative_path)
+        self._copy_if_needed(source_file, target_file, host_relative_path)
 
     def _cleanup_empty_dirs(self, directory: str) -> None:
-        """Recursively remove empty directories."""
+        """Recursively remove empty directories"""
         if not os.path.isdir(directory) or directory == TARGET_REPO:
             return
 
         if not os.listdir(directory):
             os.rmdir(directory)
             rel_dir = os.path.relpath(directory, TARGET_REPO)
-            self._log_and_print("REMOVED", f"Empty directory: {rel_dir}", "RED")
-
-            # Check if parent is now empty
+            self._log("REMOVED", f"Empty directory: {rel_dir}", "RED")
             self._cleanup_empty_dirs(os.path.dirname(directory))
+
+    def detect_deleted_files(self, delete_mode: str = "ask") -> None:
+        """Detect and optionally delete files that exist in repo but not in source"""
+        protected_files = [".gitignore", ".gitattributes", "README.md", "LICENSE"]
+
+        if self.settings["verbose"]:
+            print(f"\n{Colors.colorize('Checking for deleted files...', 'BLUE')}")
+        self.logger.info("Checking for deleted files...")
+
+        for root, _, files in os.walk(TARGET_REPO):
+            for file in files:
+                repo_file = os.path.join(root, file)
+                relative_path = os.path.relpath(repo_file, TARGET_REPO)
+
+                # Skip protected and ignored files
+                if (
+                    os.path.basename(relative_path) in protected_files
+                    or self.gitignore_handler.should_ignore(repo_file, TARGET_REPO)
+                    or relative_path in self.processed_files
+                ):
+                    continue
+
+                self._log("DELETED", relative_path, "RED")
+
+                # Determine if file should be deleted
+                should_delete = False
+                if delete_mode == "yes":
+                    should_delete = True
+                elif delete_mode == "ask":
+                    choice = input("Delete this file from repo? (y/n): ")
+                    should_delete = choice.lower() in ("y", "yes")
+
+                if self.settings["dry_run"]:
+                    if should_delete:
+                        self._log("WOULD REMOVE", relative_path, "RED")
+                    continue
+
+                if should_delete:
+                    os.remove(repo_file)
+                    self._log("REMOVED", f"{relative_path} from repo", "RED")
+                    self._cleanup_empty_dirs(os.path.dirname(repo_file))

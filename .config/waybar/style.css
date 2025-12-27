@@ -1,44 +1,53 @@
+/*
+██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗
+██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝
+██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
+ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+*/
+
 @import "mocha.css";
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: CaskaydiaCove Nerd Font Mono, monospace;
-    font-size: 14px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: CaskaydiaCove Nerd Font Mono, monospace;
+  font-size: 14px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: @text;
+  background: rgba(21, 18, 27, 0);
+  color: @text;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: @subtext0;
-    margin-right: 5px;
+  padding: 5px;
+  color: @subtext0;
+  margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: @rosewater;
+  color: @rosewater;
 }
 
 #workspaces button.focused {
-    color: @subtext0;
-    background: @maroon;
-    border-radius: 10px;
+  color: @subtext0;
+  background: @maroon;
+  border-radius: 10px;
 }
 
 #workspaces button.urgent {
-    color: @crust;
-    background: @subtext0;
-    border-radius: 10px;
+  color: @crust;
+  background: @subtext0;
+  border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: @rosewater;
-    color: @crust; 
-    border-radius: 10px;
+  background: @rosewater;
+  color: @crust;
+  border-radius: 10px;
 }
 
 #window,
@@ -51,74 +60,73 @@ window#waybar {
 #workspaces,
 #tray,
 #backlight {
-    background: @base;
-    padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 5px;
-    /* border: 1px solid #181825; */
+  background: @base;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  margin-top: 5px;
+  /* border: 1px solid #181825; */
 }
 
 #backlight {
-    border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 #tray {
-    border-radius: 10px;
-    margin-right: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 #workspaces {
-    background: @base;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 5px;
+  background: @base;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
 }
 
 #cpu {
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 10px;
 }
 
 #memory {
-    border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 #window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 #clock {
-    color: @subtext0;
-    border-radius: 10px 10px 10px 10px;
-    margin-left: 5px;
-    border-right: 0px;
+  color: @subtext0;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 5px;
+  border-right: 0px;
 }
 
 #network {
-    color:  @subtext0;
-    border-radius: 10px 0px 0px 10px;
-
+  color: @subtext0;
+  border-radius: 10px 0px 0px 10px;
 }
 
 #pulseaudio {
-    color: @subtext0;
-    border-left: 0px;
-    border-right: 0px;
+  color: @subtext0;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 #pulseaudio.microphone {
-    color: @subtext0;
-    border-radius: 0px 10px 10px 0px;
-    border-left: 0px;
-    border-right: 0px;
-    margin-right: 5px;
+  color: @subtext0;
+  border-radius: 0px 10px 10px 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 5px;
 }
 
 #battery {
-    color:@subtext0;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
+  color: @subtext0;
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 10px;
 }
