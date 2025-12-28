@@ -6,7 +6,7 @@ SCRIPT_DIR = Path(__file__).parent.absolute()
 TARGET_REPO = str(SCRIPT_DIR.parent)
 HOME = str(Path.home())
 
-HOST_TYPE = "pc"
+HOST_TYPE = "laptop"
 
 COMMON_DIRS: list[str] = [
     f"{HOME}/.config/hypr",
@@ -22,7 +22,7 @@ COMMON_DIRS: list[str] = [
     f"{HOME}/.config/dunst",
     f"{HOME}/.config/rofi",
     f"{HOME}/.config/waybar",
-    f"{HOME}/.config/Thunar",
+    f"{HOME}/.config/Thunar/uca.xml",
     f"{HOME}/.config/equibop/themes",
     f"{HOME}/.config/godot/editor_settings-4.5.tres",
     f"{HOME}/.config/godot/text_editor_themes",

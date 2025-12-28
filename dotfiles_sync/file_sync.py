@@ -22,7 +22,7 @@ class FileSyncer:
     """Synchronizes files between source directories and target repository"""
 
     def __init__(
-        self, gitignore_handler: GitIgnoreHandler, settings: dict[str, bool] | None = None
+        self, gitignore_handler: "GitIgnoreHandler", settings: dict[str, bool] | None = None
     ):
         self.gitignore_handler = gitignore_handler
         self.processed_files: set[str] = set()
