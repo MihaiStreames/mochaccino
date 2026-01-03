@@ -77,5 +77,6 @@
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    "claudeCode.selectedModel": "default",
+    "claudeCode.selectedModel": "opus",
+    "javascript.updateImportsOnFileMove.enabled": "always",
 }
