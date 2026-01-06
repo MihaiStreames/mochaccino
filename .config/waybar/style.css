@@ -12,8 +12,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 14px;
+  font-family: "CaskaydiaCove Nerd Font Mono", monospace;
+  font-size: 16px;
   min-height: 0;
 }
 
@@ -24,7 +24,7 @@ window#waybar {
 
 #workspaces button {
   padding: 5px;
-  color: @subtext0;
+  color: @text;
   margin-right: 5px;
 }
 
@@ -100,25 +100,25 @@ window#waybar {
 }
 
 #clock {
-  color: @subtext0;
+  color: @text;
   border-radius: 10px 10px 10px 10px;
   margin-left: 5px;
   border-right: 0px;
 }
 
 #network {
-  color: @subtext0;
+  color: @text;
   border-radius: 10px 0px 0px 10px;
 }
 
 #pulseaudio {
-  color: @subtext0;
+  color: @text;
   border-left: 0px;
   border-right: 0px;
 }
 
 #pulseaudio.microphone {
-  color: @subtext0;
+  color: @text;
   border-radius: 0px 10px 10px 0px;
   border-left: 0px;
   border-right: 0px;
@@ -126,7 +126,7 @@ window#waybar {
 }
 
 #battery {
-  color: @subtext0;
+  color: @text;
   border-radius: 0px 10px 10px 0px;
   margin-right: 10px;
 }
