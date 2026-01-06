@@ -1,36 +1,31 @@
 /*
+ * ██████╗  ██████╗ ███████╗██╗
+ * ██╔══██╗██╔═══██╗██╔════╝██║
+ * ██████╔╝██║   ██║█████╗  ██║
+ * ██╔══██╗██║   ██║██╔══╝  ██║
+ * ██║  ██║╚██████╔╝██║     ██║
+ * ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
  *
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- *
+ * Launchpad
  */
 
+@import "~/.config/rofi/shared/colors.rasi"
+@import "~/.config/rofi/shared/fonts.rasi"
+
 configuration {
-    font:                           "CaskaydiaCove Nerd Font Mono 10";
     show-icons:                     true;
-    icon-theme:                     "WhiteSur";
-    display-drun:                   "";
+    icon-theme:                     "Tela-circle-dracula";
+    display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;
     sidebar-mode:                   false;
 }
 
-* {
-    background:                     #00000000;
-    background-alt:                 #00000000;
-    background-bar:                 #f2f2f215;
-    foreground:                     #f2f2f2EE;
-    accent:                         #6BA0DE;
-}
-
 window {
     transparency:                   "real";
-    background-color:               rgba ( 46, 52, 62, 80 % );
+    background-color:               @background;
     text-color:                     @foreground;
     border:                         0px;
-    border-color:                   @border;
     border-radius:                  0px;
     width:                          100%;
     height:                         100%;
@@ -39,13 +34,12 @@ window {
 prompt {
     enabled:                        true;
     padding:                        0.30% 1% 0% -0.5%;
-    background-color:               @background-alt;
+    background-color:               transparent;
     text-color:                     @foreground;
-    font:                           "CaskaydiaCove Nerd Font Mono 12";
 }
 
 entry {
-    background-color:               @background-alt;
+    background-color:               transparent;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
@@ -57,18 +51,18 @@ entry {
 
 inputbar {
     children:                       [ prompt, entry ];
-    background-color:               @background-bar;
+    background-color:               @background-alt;
     text-color:                     @foreground;
     expand:                         false;
-    border:                         0.1%;
+    border:                         2px;
     border-radius:                  6px;
-    border-color:                   @accent;
+    border-color:                   @active;
     margin:                         0% 30% 0% 30%;
     padding:                        1%;
 }
 
 listview {
-    background-color:               @background-alt;
+    background-color:               transparent;
     columns:                        7;
     lines:                          4;
     spacing:                        2%;
@@ -78,17 +72,17 @@ listview {
 }
 
 mainbox {
-    background-color:               @background-alt;
+    background-color:               transparent;
     border:                         0% 0% 0% 0%;
     border-radius:                  0% 0% 0% 0%;
-    border-color:                   @accent;
+    border-color:                   @active;
     children:                       [ inputbar, listview ];
     spacing:                        8%;
     padding:                        10% 8.5% 10% 8.5%;
 }
 
 element {
-    background-color:               @background-alt;
+    background-color:               transparent;
     text-color:                     @foreground;
     orientation:                    vertical;
     border-radius:                  0%;
@@ -96,7 +90,7 @@ element {
 }
 
 element-icon {
-    background-color:               @background-alt;
+    background-color:               transparent;
     text-color:                     inherit;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
@@ -105,7 +99,7 @@ element-icon {
 }
 
 element-text {
-    background-color:               @background-alt;
+    background-color:               transparent;
     text-color:                     inherit;
     expand:                         true;
     horizontal-align:               0.5;
@@ -114,9 +108,8 @@ element-text {
 }
 
 element selected {
-    background-color:               rgba ( 107, 160, 222, 50 % );
-    text-color:                     @foreground;
+    background-color:               @selected;
+    text-color:                     @background;
     border:                         0% 0% 0% 0%;
     border-radius:                  6px;
-    border-color:                   @accent;
 }

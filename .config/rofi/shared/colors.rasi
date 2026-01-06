@@ -1,1 +1,19 @@
-@import "~/.config/rofi/colors/mihuu.rasi"
+/*
+ * ██████╗  ██████╗ ███████╗██╗
+ * ██╔══██╗██╔═══██╗██╔════╝██║
+ * ██████╔╝██║   ██║█████╗  ██║
+ * ██╔══██╗██║   ██║██╔══╝  ██║
+ * ██║  ██║╚██████╔╝██║     ██║
+ * ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ *
+ * Colors - Catppuccin Mocha
+ */
+
+* {
+    background:     #11111be6;
+    background-alt: #1e1e2eff;
+    foreground:     #cdd6f4ff;
+    selected:       #f5e0dcff;
+    active:         #f5e0dcff;
+    urgent:         #eba0acff;
+}
