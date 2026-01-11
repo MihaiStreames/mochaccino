@@ -6,7 +6,7 @@ SCRIPT_DIR = Path(__file__).parent.absolute()
 TARGET_REPO = str(SCRIPT_DIR.parent)
 HOME = str(Path.home())
 
-HOST_TYPE = "laptop"
+HOST_TYPE = "pc"
 
 COMMON_DIRS: list[str] = [
     f"{HOME}/.config/hypr",
@@ -39,7 +39,10 @@ COMMON_DIRS: list[str] = [
 
 HOST_SPECIFIC_FILES: list[tuple[str, str]] = [
     (f"{HOME}/.config/hypr/conf/monitors.conf", "hypr/conf/monitors.conf"),
+    (f"{HOME}/.config/hypr/conf/keybinds.conf", "hypr/conf/keybinds.conf"),
+    (f"{HOME}/.config/hypr/conf/monitors.conf", "hypr/conf/monitors.conf"),
     (f"{HOME}/.config/hypr/conf/env.conf", "hypr/conf/env.conf"),
+    (f"{HOME}/.config/hypr/hypridle.conf", "hypr/hypridle.conf"),
     (f"{HOME}/.config/gtk-3.0/bookmarks", "gtk-3.0/bookmarks"),
 ]
 
