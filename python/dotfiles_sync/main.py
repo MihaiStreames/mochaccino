@@ -5,7 +5,7 @@ Author: MihuuStrames (2025)
 Simple utility to sync (dot)files between source directories and a git repository.
 """
 
-import os
+from pathlib import Path
 import sys
 import traceback
 
@@ -41,16 +41,16 @@ def process_common_configs(syncer: FileSyncer, verbose: bool) -> None:
         click.secho("=== Processing Common Configs ===", fg="magenta")
 
     for source in COMMON_DIRS:
-        if os.path.isdir(source):
+        if Path(source).is_dir():
             if verbose:
                 click.secho("Processing directory: ", fg="yellow", nl=False)
                 click.echo(source)
             syncer.process_directory(source)
-        elif os.path.isfile(source):
+        elif Path(source).is_file():
             if verbose:
                 click.secho("Processing file: ", fg="yellow", nl=False)
                 click.echo(source)
-            syncer.sync_file(source, os.path.dirname(source))
+            syncer.sync_file(source, str(Path(source).parent))
         elif verbose:
             click.secho("Source does not exist: ", fg="red", nl=False)
             click.echo(source)
