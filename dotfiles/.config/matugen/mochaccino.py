@@ -228,7 +228,7 @@ def generate_palette(primary_hex: str, surface_hex: str) -> dict[str, str]:
 
 
 def palette_to_json(palette: dict[str, str]) -> str:
-    """Convert palette dict to matugen --import-json-string format."""
+    """Convert palette dict to matugen --import-json-string format"""
     data: dict[str, dict[str, dict[str, dict[str, str]]]] = {"mochaccino": {}}
     for name, hex_color in palette.items():
         stripped = hex_color.lstrip("#")
@@ -241,14 +241,13 @@ def palette_to_json(palette: dict[str, str]) -> str:
 
 
 def get_matugen_colors(image_path: str, config_path: str | None = None) -> dict[str, dict[str, dict[str, str]]]:
-    """Run matugen in dry-run mode and capture Material You colors."""
+    """Run matugen in dry-run mode and capture Material You colors"""
     cmd = ["matugen", "image", image_path, "--json", "hex", "--dry-run"]
 
     if config_path:
         cmd.extend(["--config", config_path])
 
     result = subprocess.run(cmd, capture_output=True, text=True, check=False)
-
     if result.returncode != 0:
         print(f"matugen failed: {result.stderr}", file=sys.stderr)
         sys.exit(1)

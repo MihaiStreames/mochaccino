@@ -29,3 +29,23 @@ mode = "Dark"
 input_path = "templates/dunst-colors.conf"
 output_path = "~/.config/dunst/dunstrc.d/colors.conf"
 mode = "Dark"
+
+[templates.wlogout]
+input_path = "templates/wlogout-colors.css"
+output_path = "~/.config/wlogout/colors.css"
+mode = "Dark"
+
+[templates.spicetify]
+input_path = "templates/spicetify-color.ini"
+output_path = "~/.config/spicetify/Themes/mochaccino/color.ini"
+mode = "Dark"
+
+[templates.sublime]
+input_path = "templates/sublime-color-scheme.json"
+output_path = "~/.config/sublime-text/Packages/User/Mochaccino.sublime-color-scheme"
+mode = "Dark"
+
+[templates.hyprlock]
+input_path = "templates/hyprlock-colors.conf"
+output_path = "~/.config/hypr/conf/hyprlock-colors.conf"
+mode = "Dark"

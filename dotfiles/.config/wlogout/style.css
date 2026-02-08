@@ -7,6 +7,8 @@
  *  ╚══╝╚══╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
  */
 
+@import url("colors.css");
+
 * {
     font-family: CaskaydiaCove Nerd Font Mono, Symbols Nerd Font;
     font-size: 24px;
@@ -15,11 +17,11 @@
 }
 
 window {
-    background-color: #11111b;
+    background-color: @bg;
 }
 
 button {
-    background-color: #11111b;
+    background-color: @bg;
     border-style: solid;
     border-radius: 50px;
     background-repeat: no-repeat;
@@ -30,65 +32,65 @@ button {
 
 button:active,
 button:hover {
-    background-color: #cdd6f4;
+    background-color: @fg;
 }
 
 button:focus {
-    background-color: #cdd6f4;
+    background-color: @fg;
 }
 
 #lock {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/lock.png"));
+    background-image: image(url("assets/lock.png"));
 }
 
 #lock:hover {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/lock-hover.png"));
-    color: #11111b;
+    background-image: image(url("assets/lock-hover.png"));
+    color: @bg;
 }
 
 #logout {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/logout.png"));
+    background-image: image(url("assets/logout.png"));
 }
 
 #logout:hover {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/logout-hover.png"));
-    color: #11111b;
+    background-image: image(url("assets/logout-hover.png"));
+    color: @bg;
 }
 
 #suspend {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/sleep.png"));
+    background-image: image(url("assets/sleep.png"));
 }
 
 #suspend:hover {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/sleep-hover.png"));
-    color: #11111b;
+    background-image: image(url("assets/sleep-hover.png"));
+    color: @bg;
 }
 
 #shutdown {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/power.png"));
+    background-image: image(url("assets/power.png"));
 }
 
 #shutdown:hover {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/power-hover.png"));
-    color: #11111b;
+    background-image: image(url("assets/power-hover.png"));
+    color: @bg;
 }
 
 #reboot {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/restart.png"));
+    background-image: image(url("assets/restart.png"));
 }
 
 #reboot:hover {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/restart-hover.png"));
-    color: #11111b;
+    background-image: image(url("assets/restart-hover.png"));
+    color: @bg;
 }
 
 #exit {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/restart.png"));
-    background-color: #11111b;
+    background-image: image(url("assets/restart.png"));
+    background-color: @bg;
 }
 
 #exit:hover {
-    background-image: image(url("/home/sincos/.config/wlogout/assets/restart-hover.png"));
-    color: #11111b;
-    background-color: #cdd6f4;
+    background-image: image(url("assets/restart-hover.png"));
+    color: @bg;
+    background-color: @fg;
 }

@@ -30,3 +30,6 @@ kill -SIGUSR1 $(pidof kitty) 2>/dev/null
 hyprctl reload 2>/dev/null
 pkill waybar 2>/dev/null; sleep 0.3; waybar &
 pkill dunst 2>/dev/null
+source "$HOME/.config/fish/conf.d/02-colors.fish" 2>/dev/null
+spicetify config current_theme mochaccino color_scheme mochaccino 2>/dev/null
+spicetify apply 2>/dev/null &
