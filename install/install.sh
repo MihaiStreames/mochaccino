@@ -12,8 +12,8 @@ source "$SCRIPT_DIR/pkgs.sh"
 # --------------------------------------------------------------
 
 if [[ $(_checkCommandExists "gum") != 0 ]]; then
-    echo ":: Installing gum for interactive menus..."
-    sudo pacman --noconfirm -S gum
+	echo ":: Installing gum for interactive menus..."
+	sudo pacman --noconfirm -S gum
 fi
 
 # --------------------------------------------------------------
@@ -32,11 +32,11 @@ _checkDinit
 _checkInternet
 
 if [[ $(_hasNvidia) == 0 ]]; then
-    log_success "Nvidia GPU detected"
-    HAS_NVIDIA="true"
+	log_success "Nvidia GPU detected"
+	HAS_NVIDIA="true"
 else
-    log_info "No Nvidia GPU detected"
-    HAS_NVIDIA="false"
+	log_info "No Nvidia GPU detected"
+	HAS_NVIDIA="false"
 fi
 
 echo
@@ -48,7 +48,7 @@ echo
 log_info "Select your keyboard layout"
 KEYBOARD_LAYOUT=$(gum choose "us" "fr" "de" "es" "uk" "other")
 if [[ "$KEYBOARD_LAYOUT" == "other" ]]; then
-    KEYBOARD_LAYOUT=$(gum input --placeholder "Enter layout (e.g. us)")
+	KEYBOARD_LAYOUT=$(gum input --placeholder "Enter layout (e.g. us)")
 fi
 log_success "Keyboard layout: $KEYBOARD_LAYOUT"
 
@@ -56,12 +56,12 @@ echo
 
 log_info "Select optional packages to install (space to select, enter to confirm)"
 OPTIONAL_SELECTED=$(gum choose --no-limit \
-    "Development (VSCode, Sublime, GitHub Desktop)" \
-    "Creative (Godot, Aseprite)" \
-    "Multimedia (OBS, Spicetify)" \
-    "Communication (Discord, Thunderbird)" \
-    "Browsers (Firefox Nightly)" \
-    "Gaming (Steam, Proton, MangoHUD)")
+	"Development (VSCode, Sublime, GitHub Desktop)" \
+	"Creative (Godot, Aseprite)" \
+	"Multimedia (OBS, Spicetify)" \
+	"Communication (Discord, Thunderbird)" \
+	"Browsers (Firefox Nightly)" \
+	"Gaming (Steam, Proton, MangoHUD)")
 
 echo
 
@@ -113,7 +113,7 @@ _installPackages "${services_dinit[@]}"
 # --------------------------------------------------------------
 
 if [[ "$HAS_NVIDIA" == "true" ]]; then
-    source "$SCRIPT_DIR/_nvidia.sh"
+	source "$SCRIPT_DIR/_nvidia.sh"
 fi
 
 # --------------------------------------------------------------
@@ -139,7 +139,7 @@ source "$SCRIPT_DIR/_dotfiles.sh"
 # --------------------------------------------------------------
 
 if [[ -n "$OPTIONAL_SELECTED" ]]; then
-    source "$SCRIPT_DIR/_optional.sh"
+	source "$SCRIPT_DIR/_optional.sh"
 fi
 
 # --------------------------------------------------------------

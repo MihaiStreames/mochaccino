@@ -9,7 +9,7 @@
  * Style for waybar using the Mocha theme from Catppuccin
  */
 
-@import "mocha.css";
+@import "colors.css";
 
 * {
   border: none;

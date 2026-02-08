@@ -22,6 +22,7 @@ COMMON_DIRS: list[str] = [
     f"{HOME}/.config/dunst",
     f"{HOME}/.config/rofi",
     f"{HOME}/.config/waybar",
+    f"{HOME}/.config/matugen",
     f"{HOME}/.config/Thunar/uca.xml",
     f"{HOME}/.config/equibop/themes",
     f"{HOME}/.config/godot/editor_settings-4.5.tres",

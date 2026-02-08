@@ -6,10 +6,10 @@
 /*  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ */
 
 *  {
-    background:     #11111be6;
-    background-alt: #1e1e2eff;
-    foreground:     #cdd6f4ff;
-    selected:       #f5e0dcff;
-    active:         #f5e0dcff;
-    urgent:         #eba0acff;
+    background:     {{ colors.surface_container_lowest.default.hex }}e6;
+    background-alt: {{ colors.surface_container.default.hex }}ff;
+    foreground:     {{ colors.on_surface.default.hex }}ff;
+    selected:       {{ colors.primary.default.hex }}ff;
+    active:         {{ colors.primary.default.hex }}ff;
+    urgent:         {{ colors.error.default.hex }}ff;
 }

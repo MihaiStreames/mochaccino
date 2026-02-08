@@ -1,0 +1,31 @@
+[config]
+
+[templates.kitty]
+input_path = "templates/kitty-theme.conf"
+output_path = "~/.config/kitty/theme.conf"
+mode = "Dark"
+
+[templates.hyprland]
+input_path = "templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/conf/colors.conf"
+mode = "Dark"
+
+[templates.rofi]
+input_path = "templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/shared/colors.rasi"
+mode = "Dark"
+
+[templates.waybar]
+input_path = "templates/waybar-colors.css"
+output_path = "~/.config/waybar/colors.css"
+mode = "Dark"
+
+[templates.fish]
+input_path = "templates/fish-colors.fish"
+output_path = "~/.config/fish/conf.d/02-colors.fish"
+mode = "Dark"
+
+[templates.dunst]
+input_path = "templates/dunst-colors.conf"
+output_path = "~/.config/dunst/dunstrc.d/colors.conf"
+mode = "Dark"

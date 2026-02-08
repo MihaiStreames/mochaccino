@@ -1,6 +1,6 @@
 """
 (Dot)files Synchronization Tool
-Author: MihuuStrames (2025)
+Author: MihaiStreames (2025)
 
 Simple utility to sync (dot)files between source directories and a git repository.
 """

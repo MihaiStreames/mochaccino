@@ -7,30 +7,31 @@
 log_info "Deploying dotfiles..."
 
 configs=(
-    "hypr"
-    "kitty"
-    "fish"
-    "waybar"
-    "rofi"
-    "dunst"
-    "wlogout"
-    "gtk-3.0"
-    "gtk-4.0"
-    "qt5ct"
-    "qt6ct"
-    "Kvantum"
-    "fastfetch"
-    "Thunar"
+	"hypr"
+	"kitty"
+	"fish"
+	"waybar"
+	"rofi"
+	"dunst"
+	"wlogout"
+	"gtk-3.0"
+	"gtk-4.0"
+	"qt5ct"
+	"qt6ct"
+	"Kvantum"
+	"fastfetch"
+	"Thunar"
+	"matugen"
 )
 
 for config in "${configs[@]}"; do
-    source="$DOTFILES_DIR/.config/$config"
-    target="$HOME/.config/$config"
-    if [[ -d "$source" ]]; then
-        mkdir -p "$(dirname "$target")"
-        cp -r "$source" "$target"
-        log_success "Copied: $config"
-    fi
+	source="$DOTFILES_DIR/.config/$config"
+	target="$HOME/.config/$config"
+	if [[ -d "$source" ]]; then
+		mkdir -p "$(dirname "$target")"
+		cp -r "$source" "$target"
+		log_success "Copied: $config"
+	fi
 done
 
 # --------------------------------------------------------------
@@ -39,8 +40,8 @@ done
 
 input_conf="$HOME/.config/hypr/conf/input.conf"
 if [[ -f "$input_conf" ]]; then
-    sed -i "s/kb_layout = .*/kb_layout = $KEYBOARD_LAYOUT/" "$input_conf"
-    log_success "Keyboard layout set to: $KEYBOARD_LAYOUT"
+	sed -i "s/kb_layout = .*/kb_layout = $KEYBOARD_LAYOUT/" "$input_conf"
+	log_success "Keyboard layout set to: $KEYBOARD_LAYOUT"
 fi
 
 # --------------------------------------------------------------
@@ -55,7 +56,7 @@ fi
 # --------------------------------------------------------------
 
 mkdir -p "$HOME/.config/gtk-3.0"
-cat > "$HOME/.config/gtk-3.0/bookmarks" << EOF
+cat >"$HOME/.config/gtk-3.0/bookmarks" <<EOF
 file://$HOME/Documents
 file://$HOME/Downloads
 file://$HOME/Music
@@ -69,12 +70,12 @@ log_success "GTK bookmarks created"
 # --------------------------------------------------------------
 
 if command -v fish &>/dev/null; then
-    fish_path=$(which fish)
-    if [[ "$SHELL" != "$fish_path" ]]; then
-        log_info "Setting fish as default shell..."
-        chsh -s "$fish_path"
-        log_success "Default shell set to fish"
-    fi
+	fish_path=$(which fish)
+	if [[ "$SHELL" != "$fish_path" ]]; then
+		log_info "Setting fish as default shell..."
+		chsh -s "$fish_path"
+		log_success "Default shell set to fish"
+	fi
 fi
 
 log_success "Dotfiles deployed"

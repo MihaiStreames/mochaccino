@@ -7,9 +7,9 @@
 log_info "Running post-install tasks..."
 
 for dir in "$HOME/.config/hypr/scripts" "$HOME/.config/rofi/scripts" "$HOME/.config/waybar/scripts"; do
-    if [[ -d "$dir" ]]; then
-        chmod +x "$dir"/*.sh 2>/dev/null
-    fi
+	if [[ -d "$dir" ]]; then
+		chmod +x "$dir"/*.sh 2>/dev/null
+	fi
 done
 log_success "Scripts made executable"
 
@@ -18,8 +18,8 @@ log_success "Scripts made executable"
 # --------------------------------------------------------------
 
 if command -v xdg-user-dirs-update &>/dev/null; then
-    xdg-user-dirs-update
-    log_success "XDG directories created"
+	xdg-user-dirs-update
+	log_success "XDG directories created"
 fi
 
 # --------------------------------------------------------------

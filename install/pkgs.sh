@@ -5,18 +5,18 @@
 # --------------------------------------------------------------
 
 base=(
-    "base-devel"
-    "git"
-    "wget"
-    "curl"
-    "htop"
-    "btop"
-    "fastfetch"
-    "unzip"
-    "unrar"
-    "7zip"
-    "flatpak"
-    "gum"
+	"base-devel"
+	"git"
+	"wget"
+	"curl"
+	"htop"
+	"btop"
+	"fastfetch"
+	"unzip"
+	"unrar"
+	"7zip"
+	"flatpak"
+	"gum"
 )
 
 # --------------------------------------------------------------
@@ -24,17 +24,17 @@ base=(
 # --------------------------------------------------------------
 
 hyprland=(
-    "hyprland"
-    "hyprland-qt-support"
-    "hyprpaper"
-    "hypridle"
-    "hyprlock"
-    "hyprpicker"
-    "hyprcursor"
-    "xdg-desktop-portal-hyprland"
-    "xdg-desktop-portal-gtk"
-    "xdg-utils"
-    "xdg-user-dirs"
+	"hyprland"
+	"hyprland-qt-support"
+	"hyprpaper"
+	"hypridle"
+	"hyprlock"
+	"hyprpicker"
+	"hyprcursor"
+	"xdg-desktop-portal-hyprland"
+	"xdg-desktop-portal-gtk"
+	"xdg-utils"
+	"xdg-user-dirs"
 )
 
 # --------------------------------------------------------------
@@ -42,10 +42,10 @@ hyprland=(
 # --------------------------------------------------------------
 
 terminal=(
-    "kitty"
-    "kitty-terminfo"
-    "kitty-shell-integration"
-    "fish"
+	"kitty"
+	"kitty-terminfo"
+	"kitty-shell-integration"
+	"fish"
 )
 
 # --------------------------------------------------------------
@@ -53,17 +53,17 @@ terminal=(
 # --------------------------------------------------------------
 
 ui=(
-    "waybar"
-    "rofi"
-    "dunst"
-    "wlogout"
-    "thunar"
-    "thunar-volman"
-    "thunar-archive-plugin"
-    "thunar-vcs-plugin"
-    "xarchiver"
-    "gvfs"
-    "gvfs-mtp"
+	"waybar"
+	"rofi"
+	"dunst"
+	"wlogout"
+	"thunar"
+	"thunar-volman"
+	"thunar-archive-plugin"
+	"thunar-vcs-plugin"
+	"xarchiver"
+	"gvfs"
+	"gvfs-mtp"
 )
 
 # --------------------------------------------------------------
@@ -71,24 +71,24 @@ ui=(
 # --------------------------------------------------------------
 
 utilities=(
-    "wl-clipboard"
-    "cliphist"
-    "grim"
-    "slurp"
-    "gammastep"
-    "pamixer"
-    "pavucontrol"
-    "playerctl"
-    "brightnessctl"
-    "blueman"
-    "network-manager-applet"
-    "gnome-keyring"
-    "polkit-gnome"
-    "mpv"
-    "vlc"
-    "imv"
-    "ristretto"
-    "qbittorrent"
+	"wl-clipboard"
+	"cliphist"
+	"grim"
+	"slurp"
+	"gammastep"
+	"pamixer"
+	"pavucontrol"
+	"playerctl"
+	"brightnessctl"
+	"blueman"
+	"network-manager-applet"
+	"gnome-keyring"
+	"polkit-gnome"
+	"mpv"
+	"vlc"
+	"imv"
+	"ristretto"
+	"qbittorrent"
 )
 
 # --------------------------------------------------------------
@@ -96,15 +96,15 @@ utilities=(
 # --------------------------------------------------------------
 
 theming=(
-    "kvantum"
-    "kvantum-qt5"
-    "qt5ct"
-    "qt6ct"
-    "nwg-look"
-    "bibata-cursor-git"
-    "tela-circle-icon-theme-dracula"
-    "kvantum-theme-catppuccin-git"
-    "sddm-astronaut-theme"
+	"kvantum"
+	"kvantum-qt5"
+	"qt5ct"
+	"qt6ct"
+	"nwg-look"
+	"bibata-cursor-git"
+	"tela-circle-icon-theme-dracula"
+	"kvantum-theme-catppuccin-git"
+	"sddm-astronaut-theme"
 )
 
 # --------------------------------------------------------------
@@ -112,16 +112,16 @@ theming=(
 # --------------------------------------------------------------
 
 fonts=(
-    "ttf-jetbrains-mono-nerd"
-    "ttf-firacode-nerd"
-    "ttf-cascadia-code-nerd"
-    "ttf-cascadia-mono-nerd"
-    "ttf-iosevka-nerd"
-    "ttf-nerd-fonts-symbols"
-    "ttf-nerd-fonts-symbols-mono"
-    "ttf-nerd-fonts-symbols-common"
-    "noto-fonts"
-    "noto-fonts-emoji"
+	"ttf-jetbrains-mono-nerd"
+	"ttf-firacode-nerd"
+	"ttf-cascadia-code-nerd"
+	"ttf-cascadia-mono-nerd"
+	"ttf-iosevka-nerd"
+	"ttf-nerd-fonts-symbols"
+	"ttf-nerd-fonts-symbols-mono"
+	"ttf-nerd-fonts-symbols-common"
+	"noto-fonts"
+	"noto-fonts-emoji"
 )
 
 # --------------------------------------------------------------
@@ -129,13 +129,13 @@ fonts=(
 # --------------------------------------------------------------
 
 nvidia=(
-    "nvidia-open-dkms"
-    "nvidia-utils"
-    "lib32-nvidia-utils"
-    "nvidia-settings"
-    "libva-nvidia-driver"
-    "egl-wayland"
-    "linux-headers"
+	"nvidia-open-dkms"
+	"nvidia-utils"
+	"lib32-nvidia-utils"
+	"nvidia-settings"
+	"libva-nvidia-driver"
+	"egl-wayland"
+	"linux-headers"
 )
 
 # --------------------------------------------------------------
@@ -143,11 +143,11 @@ nvidia=(
 # --------------------------------------------------------------
 
 services_dinit=(
-    "networkmanager-dinit"
-    "bluez-dinit"
-    "sddm-dinit"
-    "elogind-dinit"
-    "dbus-dinit"
+	"networkmanager-dinit"
+	"bluez-dinit"
+	"sddm-dinit"
+	"elogind-dinit"
+	"dbus-dinit"
 )
 
 # --------------------------------------------------------------
@@ -155,9 +155,9 @@ services_dinit=(
 # --------------------------------------------------------------
 
 optional_development=(
-    "visual-studio-code-bin"
-    "sublime-text-4"
-    "github-desktop-bin"
+	"visual-studio-code-bin"
+	"sublime-text-4"
+	"github-desktop-bin"
 )
 
 # --------------------------------------------------------------
@@ -165,8 +165,8 @@ optional_development=(
 # --------------------------------------------------------------
 
 optional_creative=(
-    "godot"
-    "aseprite"
+	"godot"
+	"aseprite"
 )
 
 # --------------------------------------------------------------
@@ -174,8 +174,8 @@ optional_creative=(
 # --------------------------------------------------------------
 
 optional_multimedia=(
-    "obs-studio"
-    "spicetify-cli"
+	"obs-studio"
+	"spicetify-cli"
 )
 
 # --------------------------------------------------------------
@@ -183,9 +183,9 @@ optional_multimedia=(
 # --------------------------------------------------------------
 
 optional_communication=(
-    "equibop-bin"
-    "thunderbird"
-    "nicotine+"
+	"equibop-bin"
+	"thunderbird"
+	"nicotine+"
 )
 
 # --------------------------------------------------------------
@@ -193,7 +193,7 @@ optional_communication=(
 # --------------------------------------------------------------
 
 optional_browsers=(
-    "firefox-nightly-bin"
+	"firefox-nightly-bin"
 )
 
 # --------------------------------------------------------------
@@ -201,13 +201,13 @@ optional_browsers=(
 # --------------------------------------------------------------
 
 optional_gaming=(
-    "steam"
-    "proton-ge-custom-bin"
-    "protonup-qt"
-    "mangohud"
-    "lib32-mangohud"
-    "gamemode"
-    "gamescope"
+	"steam"
+	"proton-ge-custom-bin"
+	"protonup-qt"
+	"mangohud"
+	"lib32-mangohud"
+	"gamemode"
+	"gamescope"
 )
 
 # --------------------------------------------------------------
@@ -215,6 +215,6 @@ optional_gaming=(
 # --------------------------------------------------------------
 
 flatpaks=(
-    "com.spotify.Client"
-    "tv.strem.Stremio"
+	"com.spotify.Client"
+	"tv.strem.Stremio"
 )
