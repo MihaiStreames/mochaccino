@@ -49,3 +49,28 @@ mode = "Dark"
 input_path = "templates/hyprlock-colors.conf"
 output_path = "~/.config/hypr/conf/hyprlock-colors.conf"
 mode = "Dark"
+
+[templates.grub-theme]
+input_path = "templates/grub-theme.txt"
+output_path = "themes/mochaccino/grub-theme.txt"
+mode = "Dark"
+
+[templates.sddm-theme]
+input_path = "templates/sddm-theme.conf"
+output_path = "themes/mochaccino/sddm-theme.conf"
+mode = "Dark"
+
+[templates.logo]
+input_path = "templates/assets/ThemeLogo.svg"
+output_path = "themes/mochaccino/ThemeLogo.svg"
+mode = "Dark"
+
+[templates.grub-background]
+input_path = "templates/assets/grub-background.svg"
+output_path = "themes/mochaccino/grub-background.svg"
+mode = "Dark"
+
+[templates.colors-cfg]
+input_path = "templates/assets/colors.cfg"
+output_path = "themes/mochaccino/colors.cfg"
+mode = "Dark"

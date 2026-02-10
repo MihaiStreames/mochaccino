@@ -1,0 +1,19 @@
+/*
+ * ██████╗  ██████╗ ███████╗██╗
+ * ██╔══██╗██╔═══██╗██╔════╝██║
+ * ██████╔╝██║   ██║█████╗  ██║
+ * ██╔══██╗██║   ██║██╔══╝  ██║
+ * ██║  ██║╚██████╔╝██║     ██║
+ * ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ *
+ * Colors - Monokai (Filter Spectrum)
+ */
+
+* {
+    background:     #222222ff;
+    background-alt: #191919ff;
+    foreground:     #f7f1ffff;
+    selected:       #69676cff;
+    active:         #bab6c0ff;
+    urgent:         #fc618dff;
+}
