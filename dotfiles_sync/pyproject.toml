@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "Simple tool to synchronize dotfiles across machines"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["click>=8.3.1", "pathspec>=0.12.1"]
+dependencies = ["click>=8.3.1"]
 
 [tool.ruff]
 line-length = 100

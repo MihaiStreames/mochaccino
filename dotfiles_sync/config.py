@@ -1,52 +1,73 @@
 from datetime import datetime
 from pathlib import Path
+import tomllib
 
 
 SCRIPT_DIR = Path(__file__).parent.absolute()
-TARGET_REPO = str(SCRIPT_DIR.parent)
+REPO_ROOT = SCRIPT_DIR.parent
 HOME = str(Path.home())
 
-HOST_TYPE = "pc"
+_TOML_PATH = SCRIPT_DIR / "sync.toml"
 
-COMMON_DIRS: list[str] = [
-    f"{HOME}/.config/hypr",
-    f"{HOME}/.config/kitty",
-    f"{HOME}/.config/fish",
-    f"{HOME}/.config/fastfetch",
-    f"{HOME}/.config/gtk-4.0",
-    f"{HOME}/.config/gtk-3.0",
-    f"{HOME}/.config/qt5ct",
-    f"{HOME}/.config/qt6ct",
-    f"{HOME}/.config/Kvantum",
-    f"{HOME}/.config/wlogout",
-    f"{HOME}/.config/dunst",
-    f"{HOME}/.config/rofi",
-    f"{HOME}/.config/waybar",
-    f"{HOME}/.config/Thunar/uca.xml",
-    f"{HOME}/.config/equibop/themes",
-    f"{HOME}/.config/godot/editor_settings-4.5.tres",
-    f"{HOME}/.config/godot/text_editor_themes",
-    f"{HOME}/.config/sublime-text/Packages",
-    f"{HOME}/.config/spicetify/Themes",
-    f"{HOME}/.config/Code/User/settings.json",
-    f"{HOME}/.config/obs-studio/themes",
-    f"{HOME}/.config/obs-studio/user.ini",
-    f"{HOME}/.bash_profile",
-    f"{HOME}/.bashrc",
-    f"{HOME}/.nanorc",
-    str(SCRIPT_DIR),
-]
 
-HOST_SPECIFIC_FILES: list[tuple[str, str]] = [
-    (f"{HOME}/.config/hypr/conf/monitors.conf", "hypr/conf/monitors.conf"),
-    (f"{HOME}/.config/hypr/conf/keybinds.conf", "hypr/conf/keybinds.conf"),
-    (f"{HOME}/.config/hypr/conf/monitors.conf", "hypr/conf/monitors.conf"),
-    (f"{HOME}/.config/hypr/conf/env.conf", "hypr/conf/env.conf"),
-    (f"{HOME}/.config/hypr/hypridle.conf", "hypr/hypridle.conf"),
-    (f"{HOME}/.config/gtk-3.0/bookmarks", "gtk-3.0/bookmarks"),
-]
+def _expand(path: str) -> str:
+    return str(Path(path).expanduser())
 
-HOST_SPECIFIC_PATHS = {path for path, _ in HOST_SPECIFIC_FILES}
+
+class SyncConfig:
+    def __init__(
+        self,
+        host: str,
+        target: Path,
+        sync_ignore: list[str],
+        common_dirs: list[str],
+        host_files: list[tuple[str, str]],
+        host_specific_paths: set[str],
+    ) -> None:
+        self.host = host
+        self.target = target
+        self.sync_ignore = sync_ignore
+        self.common_dirs = common_dirs
+        self.host_files = host_files
+        self.host_specific_paths = host_specific_paths
+
+
+def load_config(
+    host_override: str | None = None,
+    target_override: str | None = None,
+) -> "SyncConfig":
+    with _TOML_PATH.open("rb") as f:
+        data = tomllib.load(f)
+
+    host = host_override or data.get("host", "")
+    if not host:
+        raise ValueError("No host set — use --host or set 'host' in sync.toml")
+
+    raw_target = target_override or data.get("target", "dotfiles")
+    target = (REPO_ROOT / raw_target).resolve()
+    if not target.exists():
+        target.mkdir(parents=True)
+
+    ignore: list[str] = data.get("sync", {}).get("ignore", [])
+    common_dirs: list[str] = [_expand(p) for p in data.get("common", {}).get("dirs", [])]
+
+    hosts = data.get("hosts", {})
+    if host not in hosts:
+        raise ValueError(f"Unknown host '{host}' — add it to sync.toml under [hosts.{host}]")
+
+    host_files: list[tuple[str, str]] = [
+        (_expand(src), dest) for src, dest in hosts[host].get("files", [])
+    ]
+    host_specific_paths = {src for src, _ in host_files}
+
+    return SyncConfig(
+        host=host,
+        target=target,
+        sync_ignore=ignore,
+        common_dirs=common_dirs,
+        host_files=host_files,
+        host_specific_paths=host_specific_paths,
+    )
 
 
 class Colors:
@@ -67,9 +88,3 @@ class Colors:
 
 
 LOG_FILE = f"/tmp/dotfiles_sync_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-
-DEFAULT_SETTINGS: dict[str, bool] = {
-    "dry_run": False,
-    "auto_delete": False,
-    "verbose": True,
-}

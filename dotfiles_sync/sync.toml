@@ -1,0 +1,66 @@
+# active host
+# override with --host flag
+host = "laptop"
+# target folder relative to repo root
+# override with --target flag
+target = "dotfiles"
+
+[sync]
+ignore = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    ".ruff_cache",
+    ".mypy_cache",
+    ".vscode",
+    ".claude",
+    "*.pyc",
+    "*.log",
+]
+
+[common]
+dirs = [
+    "~/.config/hypr",
+    "~/.config/kitty",
+    "~/.config/fish",
+    "~/.config/fastfetch",
+    "~/.config/gtk-4.0",
+    "~/.config/gtk-3.0",
+    "~/.config/qt5ct",
+    "~/.config/qt6ct",
+    "~/.config/Kvantum",
+    "~/.config/wlogout",
+    "~/.config/dunst",
+    "~/.config/rofi",
+    "~/.config/waybar",
+    "~/.config/Thunar/uca.xml",
+    "~/.config/equibop/themes",
+    "~/.config/godot/editor_settings-4.5.tres",
+    "~/.config/godot/text_editor_themes",
+    "~/.config/sublime-text/Packages",
+    "~/.config/spicetify/Themes",
+    "~/.config/Code/User/settings.json",
+    "~/.config/obs-studio/themes",
+    "~/.config/obs-studio/user.ini",
+    "~/.bash_profile",
+    "~/.bashrc",
+    "~/.nanorc",
+]
+
+[hosts.laptop]
+files = [
+    ["~/.config/hypr/conf/monitors.conf", "hypr/conf/monitors.conf"],
+    ["~/.config/hypr/conf/keybinds.conf", "hypr/conf/keybinds.conf"],
+    ["~/.config/hypr/conf/env.conf", "hypr/conf/env.conf"],
+    ["~/.config/hypr/hypridle.conf", "hypr/hypridle.conf"],
+    ["~/.config/gtk-3.0/bookmarks", "gtk-3.0/bookmarks"],
+]
+
+[hosts.pc]
+files = [
+    ["~/.config/hypr/conf/monitors.conf", "hypr/conf/monitors.conf"],
+    ["~/.config/hypr/conf/keybinds.conf", "hypr/conf/keybinds.conf"],
+    ["~/.config/hypr/conf/env.conf", "hypr/conf/env.conf"],
+    ["~/.config/hypr/hypridle.conf", "hypr/hypridle.conf"],
+    ["~/.config/gtk-3.0/bookmarks", "gtk-3.0/bookmarks"],
+]
