@@ -1,16 +1,11 @@
-## JS / TS
-node_modules/
-
 ## IDEs
-.idea/
-.vs/
 .vscode/
-.vscode-test/
 
-## Py
+## Python
 .ruff_cache/
+.mypy_cache/
 __pycache__/
 .venv/
 
-## Git
-.git/
+## LLMs
+.claude/

@@ -1,7 +1,13 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# enforce LF everywhere
+* text=auto eol=lf
+
+# LFS
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
 *.svg filter=lfs diff=lfs merge=lfs -text
+# these are dotconfig files, not source code
+*.css linguist-detectable=false
+*.scss linguist-detectable=false
+*.js linguist-detectable=false
