@@ -1,12 +1,12 @@
 -- https://wiki.hypr.land/Configuring/Basics/Autostart/
 
-hl.on("hyprland.start", function()
-	--# 1. STATUS BAR & NOTIFICATIONS #--
-	--# 2. SYS TRAY APPLETS #--
-	--# 3. CLIPBOARD #--
-	--# 4. AUTH & SESSION #--
-	--# 5. WP, LOCK SCREEN, FILTER #--
+--# 1. STATUS BAR & NOTIFICATIONS #--
+--# 2. SYS TRAY APPLETS #--
+--# 3. CLIPBOARD #--
+--# 4. AUTH & SESSION #--
+--# 5. WP, LOCK SCREEN, FILTER #--
 
+hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("dunst")
 
