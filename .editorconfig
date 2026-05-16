@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-[*.sh]
+[*.{sh,fish}]
 indent_style = space
 indent_size = 2
 
@@ -25,6 +25,10 @@ indent_size = 4
 max_line_length = 160
 
 [*.conf]
+indent_style = tab
+indent_size = 2
+
+[*.css]
 indent_style = tab
 indent_size = 2
 

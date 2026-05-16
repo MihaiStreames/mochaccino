@@ -25,6 +25,7 @@ dotfiles/.config/fish/fish_variables
 
 ## Machine-specific state
 dotfiles/.config/godot/recent_dirs
+dotfiles/.config/godot/text_editor_themes
 dotfiles/.config/gtk-3.0/bookmarks
 dotfiles/.config/Thunar/accels.scm
 

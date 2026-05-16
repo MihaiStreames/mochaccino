@@ -1,15 +1,15 @@
 {
-    "discordBranch": "stable",
-    "tray": true,
-    "minimizeToTray": false,
-    "arRPC": true,
-    "trayColor": "",
-    "trayMainOverride": false,
-    "splashColor": "rgb(205, 214, 244)",
-    "splashBackground": "rgb(17, 17, 27)",
-    "spellCheckLanguages": [
-        "en-US",
-        "en"
-    ],
-    "middleClickAutoscroll": true
+  "discordBranch": "stable",
+  "tray": true,
+  "minimizeToTray": false,
+  "arRPC": true,
+  "trayColor": "",
+  "trayMainOverride": false,
+  "splashColor": "rgb(205, 214, 244)",
+  "splashBackground": "rgb(17, 17, 27)",
+  "spellCheckLanguages": [
+    "en-US",
+    "en"
+  ],
+  "middleClickAutoscroll": true
 }

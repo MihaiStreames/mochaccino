@@ -1,96 +1,87 @@
-/*
- * ██╗    ██╗██╗      ██████╗  ██████╗  ██████╗ ██╗   ██╗████████╗
- * ██║    ██║██║     ██╔═══██╗██╔════╝ ██╔═══██╗██║   ██║╚══██╔══╝
- * ██║ █╗ ██║██║     ██║   ██║██║  ███╗██║   ██║██║   ██║   ██║
- * ██║███╗██║██║     ██║   ██║██║   ██║██║   ██║██║   ██║   ██║
- * ╚███╔███╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝╚██████╔╝   ██║
- *  ╚══╝╚══╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
- */
-
 @import url("colors.css");
 
 * {
-    font-family: CaskaydiaCove Nerd Font Mono, Symbols Nerd Font;
-    font-size: 24px;
-    transition-property: background-color;
-    transition-duration: 0.7s;
+	font-family:           CaskaydiaCove Nerd Font Mono,   Symbols Nerd Font;
+	font-size:             24px;
+	transition-property:   background-color;
+	transition-duration:   0.7s;
 }
 
 window {
-    background-color: @bg;
+	background-color:      @bg;
 }
 
 button {
-    background-color: @bg;
-    border-style: solid;
-    border-radius: 50px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 15%;
-    margin: 15px;
+	background-color:      @bg;
+	border-style:          solid;
+	border-radius:         50px;
+	background-repeat:     no-repeat;
+	background-position:   center;
+	background-size:       15%;
+	margin:                15px;
 }
 
 button:active,
 button:hover {
-    background-color: @fg;
+	background-color: @fg;
 }
 
 button:focus {
-    background-color: @fg;
+	background-color: @fg;
 }
 
 #lock {
-    background-image: image(url("assets/lock.png"));
+	background-image: image(url("assets/lock.png"));
 }
 
 #lock:hover {
-    background-image: image(url("assets/lock-hover.png"));
-    color: @bg;
+	background-image:   image(url("assets/lock-hover.png"));
+	color:              @bg;
 }
 
 #logout {
-    background-image: image(url("assets/logout.png"));
+	background-image: image(url("assets/logout.png"));
 }
 
 #logout:hover {
-    background-image: image(url("assets/logout-hover.png"));
-    color: @bg;
+	background-image:   image(url("assets/logout-hover.png"));
+	color:              @bg;
 }
 
 #suspend {
-    background-image: image(url("assets/sleep.png"));
+	background-image: image(url("assets/sleep.png"));
 }
 
 #suspend:hover {
-    background-image: image(url("assets/sleep-hover.png"));
-    color: @bg;
+	background-image:   image(url("assets/sleep-hover.png"));
+	color:              @bg;
 }
 
 #shutdown {
-    background-image: image(url("assets/power.png"));
+	background-image: image(url("assets/power.png"));
 }
 
 #shutdown:hover {
-    background-image: image(url("assets/power-hover.png"));
-    color: @bg;
+	background-image:   image(url("assets/power-hover.png"));
+	color:              @bg;
 }
 
 #reboot {
-    background-image: image(url("assets/restart.png"));
+	background-image: image(url("assets/restart.png"));
 }
 
 #reboot:hover {
-    background-image: image(url("assets/restart-hover.png"));
-    color: @bg;
+	background-image:   image(url("assets/restart-hover.png"));
+	color:              @bg;
 }
 
 #exit {
-    background-image: image(url("assets/restart.png"));
-    background-color: @bg;
+	background-image: image(url("assets/restart.png"));
+	background-color: @bg;
 }
 
 #exit:hover {
-    background-image: image(url("assets/restart-hover.png"));
-    color: @bg;
-    background-color: @fg;
+	background-image:   image(url("assets/restart-hover.png"));
+	background-color:   @fg;
+	color:              @bg;
 }
