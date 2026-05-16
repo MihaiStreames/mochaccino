@@ -1,0 +1,116 @@
+[
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  {
+    "key": "alt+1",
+    "command": "workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "alt+2",
+    "command": "workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "alt+3",
+    "command": "workbench.action.openEditorAtIndex3"
+  },
+  {
+    "key": "alt+4",
+    "command": "workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "alt+5",
+    "command": "workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "alt+6",
+    "command": "workbench.action.openEditorAtIndex6"
+  },
+  {
+    "key": "alt+7",
+    "command": "workbench.action.openEditorAtIndex7"
+  },
+  {
+    "key": "alt+8",
+    "command": "workbench.action.openEditorAtIndex8"
+  },
+  {
+    "key": "alt+9",
+    "command": "workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateBack",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateForward",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+g c",
+    "command": "git.commit"
+  },
+  {
+    "key": "ctrl+g p",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+g l",
+    "command": "git.pull"
+  },
+  {
+    "key": "ctrl+g s",
+    "command": "git.stage"
+  },
+  {
+    "key": "ctrl+g a",
+    "command": "git.stageAll"
+  },
+  {
+    "key": "ctrl+g u",
+    "command": "git.unstage"
+  },
+  {
+    "key": "ctrl+g shift+u",
+    "command": "git.unstageAll"
+  },
+  {
+    "key": "ctrl+g z",
+    "command": "git.undoCommit"
+  },
+  {
+    "key": "ctrl+g t c",
+    "command": "git.createTag"
+  },
+  {
+    "key": "ctrl+g t d",
+    "command": "git.deleteTag"
+  }
+]

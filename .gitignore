@@ -1,11 +1,35 @@
 ## IDEs
 .vscode/
 
-## Python
-.ruff_cache/
-.mypy_cache/
-__pycache__/
-.venv/
-
 ## LLMs
 .claude/
+
+## Equibop
+dotfiles/.config/equibop/sessionData/
+dotfiles/.config/equibop/Crashpad/
+dotfiles/.config/equibop/MessageLoggerData/
+dotfiles/.config/equibop/state.json
+dotfiles/.config/equibop/TrayIcons/
+
+## VS Code (only track User settings)
+dotfiles/.config/Code/*
+!dotfiles/.config/Code/User/
+dotfiles/.config/Code/User/*
+!dotfiles/.config/Code/User/settings.json
+!dotfiles/.config/Code/User/keybindings.json
+
+## Sublime Text (only track Preferences)
+dotfiles/.config/sublime-text/*
+!dotfiles/.config/sublime-text/Packages/
+dotfiles/.config/sublime-text/Packages/*
+!dotfiles/.config/sublime-text/Packages/User/
+dotfiles/.config/sublime-text/Packages/User/*
+!dotfiles/.config/sublime-text/Packages/User/Preferences.sublime-settings
+
+## Fish
+dotfiles/.config/fish/fish_variables
+
+## Machine-specific state
+dotfiles/.config/godot/recent_dirs
+dotfiles/.config/gtk-3.0/bookmarks
+dotfiles/.config/Thunar/accels.scm

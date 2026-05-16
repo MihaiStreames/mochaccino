@@ -1,0 +1,165 @@
+[gd_resource type="EditorSettings" format=3]
+
+[sub_resource type="InputEventKey" id="InputEventKey_pjhgq"]
+device = -1
+command_or_control_autoremap = true
+keycode = 79
+
+[sub_resource type="Shortcut" id="Shortcut_11kuq"]
+events = [SubResource("InputEventKey_pjhgq")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_t1h7t"]
+device = -1
+alt_pressed = true
+keycode = 4194311
+
+[sub_resource type="Shortcut" id="Shortcut_lfk8a"]
+events = [SubResource("InputEventKey_t1h7t")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_h4ygq"]
+device = -1
+keycode = 4194325
+
+[sub_resource type="Shortcut" id="Shortcut_b1l2b"]
+events = [SubResource("InputEventKey_h4ygq")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_kpf8i"]
+device = -1
+command_or_control_autoremap = true
+keycode = 85
+
+[sub_resource type="Shortcut" id="Shortcut_qitdm"]
+events = [SubResource("InputEventKey_kpf8i")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_i2rw6"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+keycode = 4194306
+
+[sub_resource type="Shortcut" id="Shortcut_72ocy"]
+events = [SubResource("InputEventKey_i2rw6")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_416f4"]
+device = -1
+ctrl_pressed = true
+keycode = 4194306
+
+[sub_resource type="Shortcut" id="Shortcut_wap8m"]
+events = [SubResource("InputEventKey_416f4")]
+
+[resource]
+interface/editor/display_scale = 2
+interface/theme/color_preset = "Custom"
+interface/theme/base_color = Color(0.11764706, 0.11764706, 0.18039216, 1)
+interface/theme/accent_color = Color(0.79607844, 0.6509804, 0.96862745, 1)
+interface/theme/contrast = 0.2
+interface/theme/icon_saturation = 0.6
+filesystem/quick_open_dialog/instant_preview = true
+filesystem/quick_open_dialog/include_addons = true
+text_editor/theme/color_theme = "Catppuccin-Mocha"
+text_editor/theme/highlighting/symbol_color = Color(0.5372549, 0.8627451, 0.92156863, 1)
+text_editor/theme/highlighting/keyword_color = Color(0.79607844, 0.6509804, 0.96862745, 1)
+text_editor/theme/highlighting/control_flow_keyword_color = Color(0.79607844, 0.6509804, 0.96862745, 1)
+text_editor/theme/highlighting/base_type_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+text_editor/theme/highlighting/engine_type_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+text_editor/theme/highlighting/user_type_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+text_editor/theme/highlighting/comment_color = Color(0.42352942, 0.4392157, 0.5254902, 1)
+text_editor/theme/highlighting/doc_comment_color = Color(0.6, 0.7, 0.8, 0.8)
+text_editor/theme/highlighting/string_color = Color(0.6509804, 0.8901961, 0.6313726, 1)
+text_editor/theme/highlighting/background_color = Color(0.11764706, 0.11764706, 0.18039216, 1)
+text_editor/theme/highlighting/completion_background_color = Color(0.09411765, 0.09411765, 0.14509805, 1)
+text_editor/theme/highlighting/completion_selected_color = Color(0.19215687, 0.19607843, 0.26666668, 1)
+text_editor/theme/highlighting/completion_existing_color = Color(0.79607844, 0.6509804, 0.96862745, 0.12941177)
+text_editor/theme/highlighting/completion_scroll_color = Color(0.19215687, 0.19607843, 0.26666668, 1)
+text_editor/theme/highlighting/completion_scroll_hovered_color = Color(0.27058825, 0.2784314, 0.3529412, 1)
+text_editor/theme/highlighting/completion_font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+text_editor/theme/highlighting/text_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+text_editor/theme/highlighting/line_number_color = Color(0.49803922, 0.5176471, 0.6117647, 1)
+text_editor/theme/highlighting/safe_line_number_color = Color(0.6509804, 0.8901961, 0.6313726, 1)
+text_editor/theme/highlighting/caret_color = Color(0.9607843, 0.8784314, 0.8627451, 1)
+text_editor/theme/highlighting/text_selected_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+text_editor/theme/highlighting/selection_color = Color(0.34509805, 0.35686275, 0.4392157, 1)
+text_editor/theme/highlighting/brace_mismatch_color = Color(0.9529412, 0.54509807, 0.65882355, 1)
+text_editor/theme/highlighting/current_line_color = Color(0.8039216, 0.8392157, 0.95686275, 0.0627451)
+text_editor/theme/highlighting/line_length_guideline_color = Color(0.19215687, 0.19607843, 0.26666668, 1)
+text_editor/theme/highlighting/word_highlighted_color = Color(0.34509805, 0.35686275, 0.4392157, 1)
+text_editor/theme/highlighting/number_color = Color(0.98039216, 0.7019608, 0.5294118, 1)
+text_editor/theme/highlighting/function_color = Color(0.5372549, 0.7058824, 0.98039216, 1)
+text_editor/theme/highlighting/member_variable_color = Color(0.7058824, 0.74509805, 0.99607843, 1)
+text_editor/theme/highlighting/mark_color = Color(0.9529412, 0.54509807, 0.65882355, 0.21960784)
+text_editor/theme/highlighting/warning_color = Color(1, 0.87, 0.4, 0.15)
+text_editor/theme/highlighting/bookmark_color = Color(0.5372549, 0.7058824, 0.98039216, 1)
+text_editor/theme/highlighting/breakpoint_color = Color(0.9529412, 0.54509807, 0.65882355, 1)
+text_editor/theme/highlighting/executing_line_color = Color(0.9764706, 0.8862745, 0.6862745, 1)
+text_editor/theme/highlighting/code_folding_color = Color(0.49803922, 0.5176471, 0.6117647, 1)
+text_editor/theme/highlighting/search_result_color = Color(0.34509805, 0.35686275, 0.4392157, 1)
+text_editor/theme/highlighting/search_result_border_color = Color(0, 0, 0, 0)
+text_editor/theme/highlighting/gdscript/function_definition_color = Color(0.5372549, 0.7058824, 0.98039216, 1)
+text_editor/theme/highlighting/gdscript/global_function_color = Color(0.9529412, 0.54509807, 0.65882355, 1)
+text_editor/theme/highlighting/gdscript/node_path_color = Color(0.5803922, 0.8862745, 0.8352941, 1)
+text_editor/theme/highlighting/gdscript/node_reference_color = Color(0.5803922, 0.8862745, 0.8352941, 1)
+text_editor/theme/highlighting/gdscript/annotation_color = Color(0.98039216, 0.7019608, 0.5294118, 1)
+text_editor/theme/highlighting/gdscript/string_name_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+editors/animation/default_animation_step = 0.033333335
+network/connection/network_mode = 1
+export/android/debug_keystore = "/home/sincos/.local/share/godot/keystores/debug.keystore"
+export/android/debug_keystore_pass = "android"
+export/android/java_sdk_path = ""
+export/android/android_sdk_path = "/home/sincos/Android/Sdk"
+export/macos/rcodesign = ""
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/osslsigncode = ""
+_editor_settings_advanced_mode = true
+_project_settings_advanced_mode = false
+_export_template_download_directory = ""
+_default_feature_profile = ""
+_script_setup_templates_dictionary = {
+"Camera3D": "0NodeDefault",
+"Control": "0NodeDefault",
+"MeshInstance3D": "0NodeDefault",
+"Node": "0NodeDefault",
+"Node3D": "0NodeDefault"
+}
+_script_setup_use_script_templates = true
+_use_favorites_root_selection = false
+_export_preset_advanced_mode = false
+export/android/scrcpy/screen_size = "1920x1080/120"
+export/macos/actool = ""
+plugin/script_ide/outline_position_right = true
+plugin/script_ide/hide_private_members = false
+plugin/script_ide/script_list_visible = false
+plugin/script_ide/auto_navigate_in_filesystem_dock = true
+plugin/script_ide/script_tabs_visible = true
+plugin/script_ide/script_tabs_position_top = true
+plugin/script_ide/script_tabs_close_button_always = false
+plugin/script_ide/script_tabs_singleline = false
+plugin/script_ide/outline_order = PackedStringArray()
+plugin/script_ide/open_outline_popup = SubResource("Shortcut_11kuq")
+plugin/script_ide/open_scripts_popup = SubResource("Shortcut_qitdm")
+plugin/script_ide/open_quick_search_popup = SubResource("Shortcut_b1l2b")
+plugin/script_ide/open_override_popup = SubResource("Shortcut_lfk8a")
+plugin/script_ide/tab_cycle_forward = SubResource("Shortcut_wap8m")
+plugin/script_ide/tab_cycle_backward = SubResource("Shortcut_72ocy")
+plugin/script_ide/engine_callbacks = true
+plugin/script_ide/functions = true
+plugin/script_ide/signals = true
+plugin/script_ide/exported_properties = true
+plugin/script_ide/properties = true
+plugin/script_ide/classes = true
+plugin/script_ide/constants = true
+code_quality/ui/scan_options_collapsed = true
+code_quality/ui/export_options_collapsed = true
+code_quality/display/show_json_export = true
+code_quality/ui/display_options_collapsed = true
+code_quality/display/show_html_export = false
+code_quality/display/show_md_export = true
+code_quality/ui/code_checks_collapsed = true
+code_quality/ui/limits_collapsed = true
+code_quality/ui/claude_collapsed = true
+code_quality/claude/enabled = true
+code_quality/ui/cli_options_collapsed = true
+code_quality/ui/help_collapsed = true

@@ -38,3 +38,4 @@ alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
 # Custom scripts
 alias zmap='xhost +SI:localuser:root && pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY zenmap && xhost -SI:localuser:root'
 alias link-cleaner='python ~/.config/fish/scripts/link-cleaner.py'
+alias dnsq='python ~/.config/fish/scripts/dnsq.py'
