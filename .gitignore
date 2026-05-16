@@ -31,3 +31,7 @@ dotfiles/.config/Thunar/accels.scm
 
 ## LLMs
 .claude/
+
+## Python
+.ruff_cache/
+.venv/
