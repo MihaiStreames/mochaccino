@@ -1,12 +1,21 @@
-# Personal Dotfiles
+<p align="center">
+  <img src="assets/logo.png" alt="mochaccino" width="full"/>
+</p>
 
-This repository contains my personal configuration files for syncing settings across my systems.
+[![Catppuccin](https://img.shields.io/badge/catppuccin-mocha-f5e0dc?style=flat-square&labelColor=1e1e2e)](https://catppuccin.com)
+[![Platform](https://img.shields.io/badge/platform-linux-f5e0dc?style=flat-square&labelColor=1e1e2e)](https://github.com/MihaiStreames/mochaccino)
+[![Shell](https://img.shields.io/badge/shell-fish-f5e0dc?style=flat-square&labelColor=1e1e2e)](https://fishshell.com)
+
+My personal configuration files.
+
+> [!NOTE]
+> These dotfiles are tailored specifically for my personal setup and workflow.
 
 ## Future Plans
 
 - Add installation scripts
 - Add more configurations as needed
 
-## Note
-
-These dotfiles are tailored specifically for my personal setup and workflow.
+<div align="center">
+  Made with ❤️
+</div>

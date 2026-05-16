@@ -1,9 +1,3 @@
-## IDEs
-.vscode/
-
-## LLMs
-.claude/
-
 ## Equibop
 dotfiles/.config/equibop/sessionData/
 dotfiles/.config/equibop/Crashpad/
@@ -33,3 +27,6 @@ dotfiles/.config/fish/fish_variables
 dotfiles/.config/godot/recent_dirs
 dotfiles/.config/gtk-3.0/bookmarks
 dotfiles/.config/Thunar/accels.scm
+
+## LLMs
+.claude/
