@@ -8,9 +8,6 @@
 
 My personal configuration files.
 
-> [!NOTE]
-> These dotfiles are tailored specifically for my personal setup and workflow.
-
 ## Future Plans
 
 - Add installation scripts
