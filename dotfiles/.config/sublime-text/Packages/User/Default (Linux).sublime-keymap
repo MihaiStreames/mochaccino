@@ -1,0 +1,11 @@
+// mirrors zed's jetbrains base keymap plus the custom zed binds, only where sublime's defaults differ
+[
+	{ "keys": ["ctrl+d"], "command": "duplicate_line" },
+	{ "keys": ["alt+j"],  "command": "find_under_expand" },
+	{ "keys": ["ctrl+y"], "command": "run_macro_file", "args": { "file": "res://Packages/Default/Delete Line.sublime-macro" } },
+	{ "keys": ["ctrl+r"], "command": "show_panel",     "args": { "panel": "replace", "reverse": false } },
+	{ "keys": ["ctrl+b"], "command": "show_overlay",   "args": { "overlay": "goto", "show_files": true } },
+	{ "keys": ["ctrl+e"], "command": "toggle_side_bar" },
+	{ "keys": ["ctrl+h"], "command": "jump_back" },
+	{ "keys": ["ctrl+l"], "command": "jump_forward" },
+]

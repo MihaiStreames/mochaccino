@@ -13,9 +13,14 @@ dotfiles/.config/sublime-text/Packages/*
 !dotfiles/.config/sublime-text/Packages/User/
 dotfiles/.config/sublime-text/Packages/User/*
 !dotfiles/.config/sublime-text/Packages/User/Preferences.sublime-settings
+!dotfiles/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap
 
 ## Fish
 dotfiles/.config/fish/fish_variables
+
+## Micro (runtime state)
+dotfiles/.config/micro/buffers/
+dotfiles/.config/micro/backups/
 
 ## Machine-specific state
 dotfiles/.config/godot/recent_dirs

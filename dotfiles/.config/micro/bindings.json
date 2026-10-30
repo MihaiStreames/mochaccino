@@ -1,0 +1,19 @@
+{
+  "CtrlShiftUp": "MoveLinesUp",
+  "CtrlShiftDown": "MoveLinesDown",
+  "Ctrl-y": "DeleteLine",
+  "Alt-y": "Redo",
+  "Alt-j": "SpawnMultiCursor",
+  "Ctrl-w": "Quit",
+  "Ctrl-r": "command-edit:replace ",
+  "Ctrl-g": "command-edit:goto ",
+  "Alt-1": "command:tabswitch 1",
+  "Alt-2": "command:tabswitch 2",
+  "Alt-3": "command:tabswitch 3",
+  "Alt-4": "command:tabswitch 4",
+  "Alt-5": "command:tabswitch 5",
+  "Alt-6": "command:tabswitch 6",
+  "Alt-7": "command:tabswitch 7",
+  "Alt-8": "command:tabswitch 8",
+  "Alt-9": "command:tabswitch 9"
+}
