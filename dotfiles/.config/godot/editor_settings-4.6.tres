@@ -104,6 +104,7 @@ text_editor/theme/highlighting/gdscript/string_name_color = Color(0.8039216, 0.8
 editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
 editors/animation/default_animation_step = 0.033333335
 network/connection/network_mode = 1
+project_manager/default_renderer = "gl_compatibility"
 export/android/debug_keystore = "/home/sincos/.local/share/godot/keystores/debug.keystore"
 export/android/debug_keystore_pass = "android"
 export/android/java_sdk_path = ""
@@ -114,11 +115,14 @@ export/web/tls_key = ""
 export/web/tls_certificate = ""
 export/windows/osslsigncode = ""
 _editor_settings_advanced_mode = true
-_project_settings_advanced_mode = false
-_export_template_download_directory = ""
+_project_settings_advanced_mode = true
+_export_template_download_directory = "/home/sincos/.cache/godot"
 _default_feature_profile = ""
 _script_setup_templates_dictionary = {
+"Area2D": "0NodeDefault",
 "Camera3D": "0NodeDefault",
+"CanvasLayer": "0NodeDefault",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
 "Control": "0NodeDefault",
 "MeshInstance3D": "0NodeDefault",
 "Node": "0NodeDefault",
@@ -126,7 +130,7 @@ _script_setup_templates_dictionary = {
 }
 _script_setup_use_script_templates = true
 _use_favorites_root_selection = false
-_export_preset_advanced_mode = false
+_export_preset_advanced_mode = true
 export/android/scrcpy/screen_size = "1920x1080/120"
 export/macos/actool = ""
 plugin/script_ide/outline_position_right = true

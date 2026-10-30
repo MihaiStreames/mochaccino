@@ -6,8 +6,13 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 0,
-  "modules-left": ["clock", "hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
     "tray",
     "memory",
@@ -18,23 +23,19 @@
     "pulseaudio",
     "pulseaudio#microphone"
   ],
-
   "hyprland/window": {
     "format": "󰣇 {}"
   },
-
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "on-click": "activate"
     //"format": "{icon}",
   },
-
   "tray": {
     "icon-size": 12,
     "spacing": 10
   },
-
   "clock": {
     "format": "{:%A    %B-%d-%Y    %I:%M:%S %p}",
     "interval": 1,
@@ -53,16 +54,18 @@
       }
     }
   },
-
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
     "min-length": 6
   },
-
   "battery": {
     "states": {
       "good": 95,
@@ -73,9 +76,20 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": [
+      "󰂃",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
   },
-
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "tooltip": false,
@@ -91,10 +105,14 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", "", ""]
+      "default": [
+        "",
+        "",
+        "",
+        ""
+      ]
     }
   },
-
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
@@ -104,7 +122,6 @@
     "on-scroll-down": "pamixer --default-source -d 5",
     "scroll-step": 5
   },
-
   "memory": {
     "states": {
       "c": 90, // critical
@@ -121,14 +138,21 @@
     "tooltip": true,
     "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
   },
-
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
   },
-
   "network": {
     "tooltip": true,
     "format-wifi": "  {essid}",

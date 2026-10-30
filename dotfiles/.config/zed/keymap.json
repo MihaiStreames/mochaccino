@@ -1,0 +1,83 @@
+// Zed keymap
+// https://zed.dev/docs/key-bindings
+[
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }],
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePreviousItem",
+      "ctrl-b": "file_finder::Toggle",
+      "alt-1": ["pane::ActivateItem", 0],
+      "alt-2": ["pane::ActivateItem", 1],
+      "alt-3": ["pane::ActivateItem", 2],
+      "alt-4": ["pane::ActivateItem", 3],
+      "alt-5": ["pane::ActivateItem", 4],
+      "alt-6": ["pane::ActivateItem", 5],
+      "alt-7": ["pane::ActivateItem", 6],
+      "alt-8": ["pane::ActivateItem", 7],
+      "alt-9": ["pane::ActivateItem", 8]
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-f4": ["pane::CloseActiveItem", { "close_pinned": false }]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-f": "project_search::ToggleFocus",
+      "ctrl-e": "project_panel::ToggleFocus",
+      "ctrl-g c": "git::Commit",
+      "ctrl-g p": "git::Push",
+      "ctrl-g l": "git::Pull",
+      "ctrl-g a": "git::StageAll",
+      "ctrl-g shift-u": "git::UnstageAll"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-w": "editor::SelectLargerSyntaxNode"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-h": "pane::GoBack",
+      "ctrl-l": "pane::GoForward"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-shift-up": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-up": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-up": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-down": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-shift-down": "editor::MoveLineDown"
+    }
+  }
+]

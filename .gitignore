@@ -5,17 +5,11 @@ dotfiles/.config/equibop/MessageLoggerData/
 dotfiles/.config/equibop/state.json
 dotfiles/.config/equibop/TrayIcons/
 
-## VS Code (only track User settings)
-dotfiles/.config/Code/*
-!dotfiles/.config/Code/User/
-dotfiles/.config/Code/User/*
-!dotfiles/.config/Code/User/settings.json
-!dotfiles/.config/Code/User/keybindings.json
-
-## Sublime Text (only track Preferences)
+## Sublime Text (only track Preferences and the Catppuccin theme)
 dotfiles/.config/sublime-text/*
 !dotfiles/.config/sublime-text/Packages/
 dotfiles/.config/sublime-text/Packages/*
+!dotfiles/.config/sublime-text/Packages/Catppuccin/
 !dotfiles/.config/sublime-text/Packages/User/
 dotfiles/.config/sublime-text/Packages/User/*
 !dotfiles/.config/sublime-text/Packages/User/Preferences.sublime-settings
@@ -30,3 +24,6 @@ dotfiles/.config/Thunar/accels.scm
 
 ## LLMs
 .claude/
+
+## Reference dotfiles from others, kept locally for ideas
+help/
